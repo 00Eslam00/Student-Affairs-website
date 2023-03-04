@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Add Department</title>
+    </head>
+
+    <body>
+        <h3>Add Department</h3>
+        <br>
+        <form method="get">
+        <div>
+            <label for="dept_name">Department Name</label>
+            <input type="text" 
+            name="dept_name" 
+            id="dept_name"
+            required>
+        </div>
+        <br>
+        <div>
+            <label for="dept_app">Department Appreviation</label>
+            <input type="text" 
+            name="dept_app" 
+            id="dept_app" 
+            >
+        </div>
+        <br>
+        <div>
+            <label for="dept_instructor">Dept Related Instructors</label>
+            <select name="dept_instructor" id="dept_instructor" multiple required>
+                <option value="1">Instructor 1</option>
+                <option value="2">Instructor 2</option>
+                <option value="3">Instructor 3</option>
+                <option value="4">Instructor 4</option>
+                <option value="5">Instructor 5</option>
+                <option value="6">Instructor 6</option>
+                <option value="7">Instructor 7</option>
+                <option value="8">Instructor 8</option>
+                <option value="9">Instructor 9</option>
+                <option value="10">Instructor 10</option>
+            </select>
+        </div>
+        <br>
+        <div>
+            <button type="submit" value="add">Add Department</button>
+        </div>
+        <br>
+        <div>
+            <button type="reset">Reset</button>
+        </div>
+       
+    </form>
+    </body>
+
+</html>
