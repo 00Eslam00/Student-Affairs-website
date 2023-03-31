@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script
+      src="https://kit.fontawesome.com/20d7ce3dd9.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>add student</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="css/style.css" rel="stylesheet" />
+
+    <style>
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      a {
+        color: black;
+        text-decoration: none;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      header nav {
+        display: flex;
+        justify-content: space-around;
+        width: 60%;
+      }
+
+      header nav > ul {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .dropdown {
+        position: absolute;
+      }
+
+      .dropdown {
+        display: none;
+      }
+
+      li:hover > div {
+        display: block;
+        z-index: 100;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="web-logo">
+        <img src="../images/logo.jpg" width="60px" />
+      </div>
+
+      <nav class="navbar-admin">
+        <ul>
+          <li>
+            <a href="index.html"><i class="fa-solid fa-house"></i>Home</a>
+          </li>
+
+          <li class="students">
+            <i class="fa-solid fa-book"></i>Students<i
+              class="fa fa-caret-down"
+            ></i>
+
+            <div class="dropdown content">
+              <ul>
+                <li><a href="add-student.html">add student</a></li>
+                <li><a href="view-students.html">view student</a></li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="courses">
+            <i class="fa-solid fa-book"></i>Courses<i
+              class="fa fa-caret-down"
+            ></i>
+
+            <div class="dropdown content">
+              <ul>
+                <li><a href="add-courses.html">add course</a></li>
+                <li><a href="view-courses.html">view courses</a></li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="department">
+            <i class="fa-solid fa-book"></i>Departments<i
+              class="fa fa-caret-down"
+            ></i>
+
+            <div class="dropdown content">
+              <ul>
+                <li><a href="add-department.html">add department</a></li>
+                <li><a href="view-departments.html">view departments</a></li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="account">
+            <i class="fa-solid fa-user-pen"></i>Account<i
+              class="fa fa-caret-down"
+            ></i>
+
+            <div class="dropdown content">
+              <ul>
+                <li><a href="change-password.html">Change password</a></li>
+                <li><a href="login.html">Sign out</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+      <h1><center>Add Student</center></h1>
+
+    <form>
+      <b>First Name : </b><input type="text" placeholder="Enter FName" /><br />
+      <b>Second Name : </b><input type="text" placeholder="Enter SName" /><br />
+      <b>Student Birth Date : </b
+      ><input type="date" placeholder="Enter BDate" /><br />
+      <b>Student Gender : </b>
+      <label for="Male">Male</label>
+      <input type="radio" name="m" value="male" />
+      <label for="Female">Female </label>
+      <input type="radio" name="m" value="Female" /><br />
+      <b>Student Status : </b>
+      <label for="Active">Active</label>
+      <input type="radio" name="n" value="Active" />
+      <label for="Not-Active">Not-Active</label>
+      <input type="radio" name="n" value="Not-Active" /><br />
+      <b>Studemt mail : </b
+      ><input type="email" placeholder="Enter Your mail" /><br />
+      <b>Student phone : </b
+      ><input type="tel" placeholder="Enter Phone" /><br />
+      <button type="submit">submit</button>
+      <button type="reset">reset</button>
+    </form>
+  </body>
+</html>
