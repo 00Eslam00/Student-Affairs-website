@@ -1,190 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <script
-      src="https://kit.fontawesome.com/20d7ce3dd9.js"
-      crossorigin="anonymous"
-    ></script>
 
-    <title></title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="css/style.css" rel="stylesheet" />
+<head>
+	<script src="https://kit.fontawesome.com/20d7ce3dd9.js" crossorigin="anonymous"></script>
 
-<style>
+	<title></title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link href="css/style.css" rel="stylesheet" />
 
-ul{
-  list-style : none;
-  margin : 0;
-  padding : 0 ;
-}
+	<style>
+		ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
 
-a{
-  color:black;
-  text-decoration : none;
-}
+		a {
+			color: black;
+			text-decoration: none;
+		}
 
-header{
-  display : flex;
-  justify-content : space-between;
-}
+		header {
+			display: flex;
+			justify-content: space-between;
+		}
 
-header nav{
-  display : flex;
-  justify-content : space-around;
-  width : 60%;
-}
+		header nav {
+			display: flex;
+			justify-content: space-around;
+			width: 60%;
+		}
 
-header nav>ul{
-  width : 100%;
-  display : flex;
-  justify-content : space-around;
+		header nav>ul {
+			width: 100%;
+			display: flex;
+			justify-content: space-around;
 
-}
+		}
 
-.dropdown {
-  position : absolute;
-}
+		.dropdown {
+			position: absolute;
+		}
 
-.dropdown{
-  display : none  ;
-}
+		.dropdown {
+			display: none;
+		}
 
-li:hover > div{
-  display : block;
-  z-index : 100;
-}
+		li:hover>div {
+			display: block;
+			z-index: 100;
+		}
 
+	</style>
+</head>
 
-</style>
-  </head>
-  <body>
-    <header>
-      <div class="web-logo">
-        <img src="../images/logo.jpg" width="60px">
-      </div>
+<body>
+	<header>
+		<div class="web-logo">
+			<img src="../images/logo.jpg" width="60px">
+		</div>
 
-      <nav class="navbar-admin">
-        <ul>
-          <li>
-            <a href="index.html"><i class="fa-solid fa-house"></i>Home</a>
-          </li>
+		<nav class="navbar-admin">
+			<ul>
+				<li>
+					<a href="index.html"><i class="fa-solid fa-house"></i>Home</a>
+				</li>
 
-          <li class="students">
-            <i class="fa-solid fa-book"></i>Students<i
-              class="fa fa-caret-down"
-            ></i>
+				<li class="students">
+					<i class="fa-solid fa-book"></i>Students<i class="fa fa-caret-down"></i>
 
-            <div class="dropdown content">
-              <ul>
-                <li><a href="add-student.html">add student</a></li>
-                <li><a href="view-students.html">view student</a></li>
-              </ul>
-            </div>
-          </li>
-            
-           <li class="courses">
-            <i class="fa-solid fa-book"></i>Courses<i
-              class="fa fa-caret-down"
-            ></i>
+					<div class="dropdown content">
+						<ul>
+							<li><a href="add-student.html">add student</a></li>
+							<li><a href="view-students.html">view student</a></li>
+						</ul>
+					</div>
+				</li>
 
-            <div class="dropdown content">
-              <ul>
-                <li><a href="add-course.html">add course</a></li>
-                <li><a href="view-courses.html">view courses</a></li>
-              </ul>
-            </div>
-          </li>
-          
-           <li class="department">
-            <i class="fa-solid fa-book"></i>Departments<i
-              class="fa fa-caret-down"
-            ></i>
+				<li class="courses">
+					<i class="fa-solid fa-book"></i>Courses<i class="fa fa-caret-down"></i>
 
-            <div class="dropdown content">
-              <ul>
-                <li><a href="add-department.html">add department</a></li>
-                <li><a href="view-departments.html">view departments</a></li>
-              </ul>
-            </div>
-          </li>
+					<div class="dropdown content">
+						<ul>
+							<li><a href="add-course.html">add course</a></li>
+							<li><a href="view-courses.html">view courses</a></li>
+						</ul>
+					</div>
+				</li>
 
-          <li class="account">
-            <i class="fa-solid fa-user-pen"></i>Account<i
-              class="fa fa-caret-down"
-            ></i>
+				<li class="department">
+					<i class="fa-solid fa-book"></i>Departments<i class="fa fa-caret-down"></i>
 
-            <div class="dropdown content">
-              <ul>
-                <li><a href="change-password.html">Change password</a></li>
-                <li><a href="login.html">Sign out</a></li>
-              </ul>
-            </div>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <form>
-      <input
-        type="text"
-        name=""
-        value=""
-        placeholder="Choose filter"
-        disabled
-      />
-      <button type=""><i class="fa-solid fa-magnifying-glass"></i></button>
-      <button type=""><i class="fa-solid fa-filter"></i></button>
-      <div class="filter-value">
-        <p>_</p>
-      </div>
-      <div class="filter-values">
-        <p>Department-ID</p>
-        <p>Department-Name</p>
-      </div>
+					<div class="dropdown content">
+						<ul>
+							<li><a href="add-department.html">add department</a></li>
+							<li><a href="view-departments.html">view departments</a></li>
+						</ul>
+					</div>
+				</li>
 
-      <div class="Searched-values">
-        <div>
-          Department-ID = "CS231" <span><i class="fa-solid fa-xmark"></i></span>
-        </div>
-        <div>
-          Department-Name = "computer science"
-          <span><i class="fa-solid fa-xmark"></i></span>
-        </div>
-      </div>
-    </form>
+				<li class="account">
+					<i class="fa-solid fa-user-pen"></i>Account<i class="fa fa-caret-down"></i>
 
-    <table >
-      <thead>
-        <tr>
-          <th>Department-ID</th>
-          <th>Department-name</th>
-          <th>Department-courses</th>
-        </tr>
-      </thead>
+					<div class="dropdown content">
+						<ul>
+							<li><a href="change-password.html">Change password</a></li>
+							<li><a href="login.html">Sign out</a></li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</nav>
+	</header>
+	<form>
+		<input type="text" name="" value="" placeholder="Choose filter" disabled />
+		<button type=""><i class="fa-solid fa-magnifying-glass"></i></button>
+		<button type=""><i class="fa-solid fa-filter"></i></button>
+		<div class="filter-value">
+			<p>_</p>
+		</div>
+		<div class="filter-values">
+			<p>Department-ID</p>
+			<p>Department-Name</p>
+		</div>
 
-      <tbody>
-        <tr>
-          <td>IS34</td>
-          <td>information systems</td>
-          <td>IS123,DB234,CS45</td>
-        </tr>
-          <td>IS34</td>
-          <td>information systems</td>
-          <td>IS123,DB234,CS45</td>
-        </tr>
-          <td>IS34</td>
-          <td>information systems</td>
-          <td>IS123,DB234,CS45</td>
-        </tr>
-          <td>IS34</td>
-          <td>information systems</td>
-          <td>IS123,DB234,CS45</td>
-        </tr>
-          <td>IS34</td>
-          <td>information systems</td>
-          <td>IS123,DB234,CS45</td>
-        </tr>
-      </tbody>
-    </table>
-  </body>
+		<div class="Searched-values">
+			<div>
+				Department-ID = "CS231" <span><i class="fa-solid fa-xmark"></i></span>
+			</div>
+			<div>
+				Department-Name = "computer science"
+				<span><i class="fa-solid fa-xmark"></i></span>
+			</div>
+		</div>
+	</form>
+
+	<table>
+		<thead>
+			<tr>
+				<th>Department-ID</th>
+				<th>Department-name</th>
+				<th>Department-courses</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr>
+				<td>IS34</td>
+				<td>information systems</td>
+				<td>IS123,DB234,CS45</td>
+			</tr>
+			<td>IS34</td>
+			<td>information systems</td>
+			<td>IS123,DB234,CS45</td>
+			</tr>
+			<td>IS34</td>
+			<td>information systems</td>
+			<td>IS123,DB234,CS45</td>
+			</tr>
+			<td>IS34</td>
+			<td>information systems</td>
+			<td>IS123,DB234,CS45</td>
+			</tr>
+			<td>IS34</td>
+			<td>information systems</td>
+			<td>IS123,DB234,CS45</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+
 </html>
