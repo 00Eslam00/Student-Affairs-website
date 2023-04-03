@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<script src="https://kit.fontawesome.com/20d7ce3dd9.js" crossorigin="anonymous"></script>
+	<!-- <script src="https://kit.fontawesome.com/20d7ce3dd9.js" crossorigin="anonymous"></script> -->
 
 	<title></title>
 	<meta charset="UTF-8" />
@@ -103,16 +103,16 @@
 	<table class="std-table">
 		<thead>
 			<tr>
-				<th>ID</th>
-				<th class="limited">Full-name</th>
-				<th>Birth-Date</th>
-				<th>GPA</th>
-				<th>Gender</th>
-				<th>Level</th>
-				<th>Department</th>
-				<th>E-mail</th>
-				<th>Mobile</th>
-				<th>
+				<th style="width: 10%;">ID</th>
+				<th style="width: 15%;">Full-name</th>
+				<th style="width: 10%;">Birth-Date</th>
+				<th style="width: 5%;">GPA</th>
+				<th style="width: 10%;">Gender</th>
+				<th style="width: 5%;">Level</th>
+				<th style="width: 13%;">Department</th>
+				<th style="width: 10%;">E-mail</th>
+				<th style="width: 15%;">Mobile</th>
+				<th style="width: 10%;">
 					<select name="" id="" class="select-stat">
 						<option value="2">All</option>
 						<option value="1">active</option>
@@ -130,23 +130,5 @@
 	<script src="../js/random-info.js"></script>
 	<script src="../js/admin-view.js"></script>
 </body>
-
-<script>
-	let x = document.querySelectorAll("table tbody tr")
-	for (let i = 0; i < x.length; i++) {
-		x[i].ondblclick = () => window.open("edit-student.html");
-		x[i].onclick = () => {
-
-			for (let i = 0; i < x.length; i++) {
-
-				x[i].classList.remove("active");
-			}
-
-			x[i].classList.add("active");
-		}
-	}
-
-</script>
-
 
 </html>

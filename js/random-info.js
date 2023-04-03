@@ -1,9 +1,9 @@
 // Generate a random full name
 function generateRandomName() {
 	// Define arrays of first, middle, and last name options
-	const firstNameOptions = ['Alice', 'Bob', 'Charlie', 'Dave', 'Eve', 'Frank'];
+	const firstNameOptions = ['Alhrththtice', 'Bob', 'Charlie', 'Dave', 'Eve', 'Frank'];
 	const middleNameOptions = ['Anne', 'Ben', 'Claire', 'Dan', 'Elle', 'Fred'];
-	const lastNameOptions = ['Anderson', 'Brown', 'Cooper', 'Davis', 'Edwards', 'Ford'];
+	const lastNameOptions = ['Andeesfedgtrhrhrhhhhhvdvdvrson', 'Brown', 'Cooper', 'Davis', 'Edwards', 'Ford'];
 
 	const firstName = firstNameOptions[Math.floor(Math.random() * firstNameOptions.length)];
 	const middleName = middleNameOptions[Math.floor(Math.random() * middleNameOptions.length)];
@@ -143,6 +143,7 @@ function stdTableRow() {
 	const fullNameCell = document.createElement('td');
 	fullNameCell.classList.add("truncate");
 	fullNameCell.textContent = generateRandomName();
+	fullNameCell.title = fullNameCell.textContent
 	tableRow.appendChild(fullNameCell);
 
 	const birthDateCell = document.createElement('td');
@@ -168,6 +169,8 @@ function stdTableRow() {
 
 	const emailCell = document.createElement('td');
 	emailCell.textContent = generateRandomGmail();
+	emailCell.title = emailCell.textContent
+	emailCell.classList.add("truncate");
 	tableRow.appendChild(emailCell);
 
 	const mobileCell = document.createElement('td');
