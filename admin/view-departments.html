@@ -7,7 +7,7 @@
 	<title></title>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<link href="css/style.css" rel="stylesheet" />
+	<link href="../css/admin-view.css" rel="stylesheet" />
 
 	<style>
 		ul {
@@ -113,28 +113,26 @@
 			</ul>
 		</nav>
 	</header>
-	<form>
-		<input type="text" name="" value="" placeholder="Choose filter" disabled />
-		<button type=""><i class="fa-solid fa-magnifying-glass"></i></button>
-		<button type=""><i class="fa-solid fa-filter"></i></button>
-		<div class="filter-value">
-			<p>_</p>
-		</div>
-		<div class="filter-values">
-			<p>Department-ID</p>
-			<p>Department-Name</p>
-		</div>
 
-		<div class="Searched-values">
-			<div>
-				Department-ID = "CS231" <span><i class="fa-solid fa-xmark"></i></span>
-			</div>
-			<div>
-				Department-Name = "computer science"
-				<span><i class="fa-solid fa-xmark"></i></span>
-			</div>
+	<div class="container">
+		<form>
+			<select name="" id="" class="filters form-size selection">
+				<option value="Dept-ID">Dept-ID</option>
+				<option value="Dept-name">Dept-name</option>
+				<option value="Dept-courses">Dept-course</option>
+			</select>
+
+			<input type="text" placeholder="Search..." maxlength="80" class="search-bar form-size" />
+
+			<button type="button" onclick="addFilter()" class="search-btn form-size">Search</button>
+		</form>
+
+		<div class="filter-values">
 		</div>
-	</form>
+	</div>
+
+
+
 
 	<table>
 		<thead>
@@ -169,6 +167,27 @@
 			</tr>
 		</tbody>
 	</table>
+
+	<script src="../js/view.js"></script>
 </body>
+
+
+<script>
+	let x = document.querySelectorAll("table tbody tr")
+	console.log(x);
+	for (let i = 0; i < x.length; i++) {
+		x[i].ondblclick = () => window.open("edit-student.html");
+		x[i].onclick = () => {
+
+			for (let i = 0; i < x.length; i++) {
+
+				x[i].classList.remove("active");
+			}
+
+			x[i].classList.add("active");
+		}
+	}
+
+</script>
 
 </html>
