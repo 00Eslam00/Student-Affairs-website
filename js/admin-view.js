@@ -1,28 +1,9 @@
-
-// for (let i = 0 ; i < document.querySelectorAll(".delete").length ; i++){
-
-// 	document.querySelectorAll(".delete")[i].onclick = () => {
-
-// 		document.querySelectorAll(".delete")[i].parentElement.remove();
-// 	}
-
-// }
-
-
-document.addEventListener("click" , (ele) => {
-	ele = ele.target;
-	//console.log(ele)
-	if (ele.classList.contains("delete")){
-		console.log(ele);
-		ele.parentElement.remove();
-	}
-});
-
-function addFilter(){
+// Functions used in html
+function addFilter() {
 
 	let search_value = document.querySelector(".search-bar").value;
 	search_value.trim
-	if(search_value.length === 0){
+	if (search_value.length === 0) {
 		return;
 	}
 
@@ -40,3 +21,24 @@ function addFilter(){
 	document.querySelector(".filter-values").appendChild(filter_element);
 
 }
+
+
+
+
+// Events listeners
+
+document.addEventListener("click", (ele) => {
+	ele = ele.target;
+	//console.log(ele)
+	if (ele.classList.contains("delete")) {
+		ele.parentElement.remove();
+	}
+});
+
+
+document.addEventListener("change", (ele) => {
+	ele = ele.target;
+	if (ele.classList.contains("select-stat")) {
+		console.log(ele.value);
+	}
+});
