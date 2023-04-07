@@ -28,7 +28,6 @@ function addFilter() {
 	}
 
 
-
 	if (!flag) {
 		let filter_element = document.createElement("div");
 		filter_element.setAttribute("filter-name", filter_value);
@@ -47,7 +46,7 @@ function addFilter() {
 
 function applyFilter() {
 	const stdFilterDictionary = {
-		'ID': 1,
+		'Std-ID': 1,
 		'Name': 2,
 		'Date': 3,
 		'GPA': 4,
@@ -58,34 +57,99 @@ function applyFilter() {
 		'Mobile': 9
 	}
 
+	const deptFilterDictionary = {
+		'Dept-ID': 1,
+		'Dept-name': 2,
+		'Dept-courses': 3
+	}
+
+
+	const crsFilterDictionary = {
+		'Course-ID': 1,
+		'course-name': 2,
+		'Department': 3,
+		'Course-prerequistes': 4
+	}
+
+
 	const table = document.getElementsByTagName("table")[0];
 	let allRows = table.childNodes[3].childNodes;
 	const filters = document.querySelectorAll('.filter-values div');
-	if (table.classList.contains('std-table')) {
-		for (let i = 1; i < allRows.length; i++) {
-			let flag = true;
-			for (let j = 0; j < filters.length; j++) {
-				let filterName = filters[j].getAttribute("filter-name");
-				let filterNum = stdFilterDictionary[filterName];
-				let filterValue = filters[j].getAttribute("filter-value");
-				let tdEle = allRows[i].childNodes[filterNum - 1];
-				// console.log(typeof tdEle.textContent, filterValue);
-				if (!tdEle.textContent.includes(filterValue)) {
-					flag = false
-					break;
-				}
-			}
+	for (let i = 1; i < allRows.length; i++) {
+		let flag = true;
+		for (let j = 0; j < filters.length; j++) {
+			let filterName = filters[j].getAttribute("filter-name");
+			let filterNum;
 
-			if (flag === true) {
-				allRows[i].classList.remove("hide-filter");
-			} else {
-				allRows[i].classList.add("hide-filter");
-			}
-			// console.log(allRows[i]);
+			if (table.classList.contains('std-table'))
+				filterNum = stdFilterDictionary[filterName];
 
+			else if (table.classList.contains('dept-table'))
+				filterNum = deptFilterDictionary[filterName];
+
+			else if (table.classList.contains('crs-table'))
+				filterNum = crsFilterDictionary[filterName];
+
+			let filterValue = filters[j].getAttribute("filter-value");
+			let tdEle = allRows[i].childNodes[filterNum - 1];
+			// console.log(typeof tdEle.textContent, filterValue);
+			if (!tdEle.textContent.includes(filterValue)) {
+				flag = false
+				break;
+			}
 		}
+
+		if (flag === true) {
+			allRows[i].classList.remove("hide-filter");
+		} else {
+			allRows[i].classList.add("hide-filter");
+		}
+
 	}
 }
+
+
+
+
+function showConfirmationDialogue(message) {
+	return new Promise((resolve) => {
+		const confirmationDialogue = document.createElement('div');
+		confirmationDialogue.className = 'confirmation-dialogue';
+		confirmationDialogue.innerHTML = `
+		<p>${message}</p>
+		<button id="confirm-yes" class="dialogue-btn">Yes</button>
+		<button id="confirm-no" class="dialogue-btn">No</button>`;
+		const confirmYes = confirmationDialogue.querySelector('#confirm-yes');
+		const confirmNo = confirmationDialogue.querySelector('#confirm-no');
+		const removeDialogue = () => {
+			document.body.removeChild(confirmationDialogue);
+		};
+		const handleClick = (e) => {
+			e.preventDefault();
+			removeDialogue();
+			if (e.target === confirmYes) {
+				resolve(true);
+			} else {
+				resolve(false);
+			}
+		};
+		confirmYes.addEventListener('click', handleClick);
+		confirmNo.addEventListener('click', handleClick);
+		document.body.appendChild(confirmationDialogue);
+	});
+}
+
+// function confirmDelete() {
+// 	showConfirmationDialogue('Are you sure you want to delete this item?').then((confirmed) => {
+// 		if (confirmed) {
+// 			// Delete the item
+// 		} else {
+// 			// Do nothing
+// 		}
+// 	});
+// }
+
+
 
 
 // Events listeners
@@ -182,14 +246,21 @@ document.addEventListener('contextmenu', function (e) {
 
 	// Create delete option
 	deleteOptionLi.addEventListener('click', function () {
-		// Handle delete action
-		e.target.parentElement.remove();
-		console.log('Delete row:', e.target.parentElement);
 		const existingContextMenu = document.querySelector('#contextMenu');
 		if (existingContextMenu) {
 			existingContextMenu.remove();
 		}
+		const rowToDelete = e.target.parentElement;
+		const elementId = rowToDelete.parentElement.parentElement.childNodes[1].childNodes[1].childNodes[1].textContent;
+
+		showConfirmationDialogue(`Are you sure you want to delete item with ${elementId} ${rowToDelete.childNodes[0].textContent} ?`).then((confirmed) => {
+			if (confirmed) {
+				rowToDelete.remove();
+			}
+
+		});
 	});
+
 
 	// Create copy option
 	copyOptionLi.addEventListener('click', function () {
@@ -239,4 +310,10 @@ document.addEventListener("change", (ele) => {
 		}
 	}
 });
+
+
+
+
+
+
 
