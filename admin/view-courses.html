@@ -142,61 +142,13 @@
 		</thead>
 
 		<tbody>
-			<tr>
-				<td>CS234</td>
-				<td>programming one</td>
-				<td>general</td>
-				<td>CS123,DS234</td>
-			</tr>
 
-			<tr>
-				<td>CS234</td>
-				<td>programming one</td>
-				<td>general</td>
-				<td>CS123,DS234</td>
-			</tr>
-
-			<tr>
-				<td>CS234</td>
-				<td>programming one</td>
-				<td>general</td>
-				<td>CS123,DS234</td>
-			</tr>
-
-			<tr>
-				<td>CS234</td>
-				<td>programming one</td>
-				<td>general</td>
-				<td>CS123,DS234</td>
-			</tr>
-
-			<tr>
-				<td>CS234</td>
-				<td>programming one</td>
-				<td>general</td>
-				<td>CS123,DS234</td>
-			</tr>
 		</tbody>
 	</table>
 
 	<script src="../js/admin-view.js"></script>
+	<script src="../js/courses-random-info.js"></script>
 </body>
 
-<script>
-	let x = document.querySelectorAll("table tbody tr")
-	for (let i = 0; i < x.length; i++) {
-		x[i].ondblclick = () => window.open("edit-student.html");
-		x[i].onclick = () => {
-
-			for (let i = 0; i < x.length; i++) {
-
-				x[i].classList.remove("active");
-			}
-
-			x[i].classList.add("active");
-		}
-	}
-
-</script>
 
 </html>
