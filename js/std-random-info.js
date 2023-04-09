@@ -3,7 +3,7 @@ function generateRandomName() {
 	// Define arrays of first, middle, and last name options
 	const firstNameOptions = ['Alhrththtice', 'Bob', 'Charlie', 'Dave', 'Eve', 'Frank'];
 	const middleNameOptions = ['Anne', 'Ben', 'Claire', 'Dan', 'Elle', 'Fred'];
-	const lastNameOptions = ['Andeesfedgtrhrhrhhhhhvdvdvrson', 'Brown', 'Cooper', 'Davis', 'Edwards', 'Ford'];
+	const lastNameOptions = ['Andson', 'Brown', 'Cooper', 'Davis', 'Edwards', 'Ford'];
 
 	const firstName = firstNameOptions[Math.floor(Math.random() * firstNameOptions.length)];
 	const middleName = middleNameOptions[Math.floor(Math.random() * middleNameOptions.length)];
