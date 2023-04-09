@@ -35,8 +35,8 @@ function generateRandomId(start, end) {
 
 // Generate a random date string in "DD/MM/YYYY" format
 function generateRandomDateString() {
-	const start = new Date(2023, 0, 1); // January 1, 2023
-	const end = new Date(2023, 11, 31); // December 31, 2023
+	const start = new Date(2003, 0, 1); // January 1, 2003
+	const end = new Date(2003, 11, 31); // December 31, 2003
 	const randomDate = new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
 	const day = String(randomDate.getDate()).padStart(2, '0');
 	const month = String(randomDate.getMonth() + 1).padStart(2, '0');
@@ -141,7 +141,6 @@ function stdTableRow() {
 	tableRow.appendChild(idCell);
 
 	const fullNameCell = document.createElement('td');
-	fullNameCell.classList.add("truncate");
 	fullNameCell.textContent = generateRandomName();
 	fullNameCell.title = fullNameCell.textContent
 	tableRow.appendChild(fullNameCell);
@@ -170,7 +169,6 @@ function stdTableRow() {
 	const emailCell = document.createElement('td');
 	emailCell.textContent = generateRandomGmail();
 	emailCell.title = emailCell.textContent
-	emailCell.classList.add("truncate");
 	tableRow.appendChild(emailCell);
 
 	const mobileCell = document.createElement('td');

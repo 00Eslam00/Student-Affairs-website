@@ -134,7 +134,7 @@
 
 
 
-	<table>
+	<table class="dept-table">
 		<thead>
 			<tr>
 				<th>Department-ID</th>
@@ -144,49 +144,12 @@
 		</thead>
 
 		<tbody>
-			<tr>
-				<td>IS34</td>
-				<td>information systems</td>
-				<td>IS123,DB234,CS45</td>
-			</tr>
-			<td>IS34</td>
-			<td>information systems</td>
-			<td>IS123,DB234,CS45</td>
-			</tr>
-			<td>IS34</td>
-			<td>information systems</td>
-			<td>IS123,DB234,CS45</td>
-			</tr>
-			<td>IS34</td>
-			<td>information systems</td>
-			<td>IS123,DB234,CS45</td>
-			</tr>
-			<td>IS34</td>
-			<td>information systems</td>
-			<td>IS123,DB234,CS45</td>
-			</tr>
 		</tbody>
 	</table>
 
+	<script src="../js/depts-random-info.js"></script>
 	<script src="../js/admin-view.js"></script>
 </body>
 
-
-<script>
-	let x = document.querySelectorAll("table tbody tr")
-	for (let i = 0; i < x.length; i++) {
-		x[i].ondblclick = () => window.open("edit-student.html");
-		x[i].onclick = () => {
-
-			for (let i = 0; i < x.length; i++) {
-
-				x[i].classList.remove("active");
-			}
-
-			x[i].classList.add("active");
-		}
-	}
-
-</script>
 
 </html>
