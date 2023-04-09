@@ -6,7 +6,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="../css/admin-navbar.css" rel="stylesheet" />
-    <link href="../css/admin-add.css" rel="stylesheet" />
+    <link href="../css/admin-add/admin-add-student.css" rel="stylesheet" />
     <style>
       ul {
         list-style: none;
@@ -109,36 +109,56 @@
       </nav>
     </header>
     <h1>Add Student</h1><br />
-    <main>
+    <main class="main">
       <form id="add-student-form" method="post">
-        <label for="firstname"><span>First Name</span></label>
-        <input id="firstname" type="text" placeholder="Enter Name" /><br />
-        <label for="lastname"><span>Last Name </span></label>
-        <input id="lastname" type="text" placeholder="Enter Name" /><br />
-        <lablel for="birthdate">Birth Date </lablel>
-        <input id="birthdate" type="date" /><br />
-        <select id="student-gender" name="gender" required>
-          <option value="">Select Gender</option>
-          <option value="male">Male</option>
-          <option value="female">Female</option>
-          <option value="other">Other</option>
-        </select>
-        <select name="stat" id="stat" required>
-          <option value="">Select Status</option>
-          <option value="active">Active</option>
-          <option value="not-active">Not-Active</option>
-        </select>
-        <label for="email"><span>Email</span></label>
-        <input id="email" type="email" placeholder="Enter email" /><br />
-        <label for="phone"><span>Phone</span></label>
-        <input id="phone" type="tel" placeholder="Enter Phone" /><br />
-        <label for="add"><span>Address</span></label>
-        <input id="add" type="add" placeholder="Enter Address" /><br />
-        <button type="submit">Submit</button>
-        <button type="reset">Reset</button>
+        <div class="box fname">
+          <label for="firstname"><span>First Name</span></label>
+          <input id="firstname" type="text" placeholder="Enter Name" />
+        </div>
+        <div class="box lname">
+          <label for="lastname"><span>Last Name </span></label>
+          <input id="lastname" type="text" placeholder="Enter Name" />
+        </div>
+        <div class="box bdate">
+          <lablel for="birthdate"><b>Brith Date</b> </lablel>
+          <input id="birthdate" type="date" />
+        </div>
+        <div class="box gender">
+          <label for="stat"><span>Select Gender</span></label>
+          <select id="gender" name="gender" required>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="box stat">
+          <label for="stat"><span>Select Status </span></label>
+          <select name="stat" id="stat" required>
+            <option value="active">Active</option>
+            <option value="not-active">Not-Active</option>
+          </select>
+        </div>
+        <div class="box email">
+          <label for="email"><span>Email</span></label>
+          <input id="email" type="email" placeholder="Enter email" />
+        </div>
+        <div class="box phone">
+          <label for="phone"><span>Phone</span></label>
+          <input id="phone" type="tel" placeholder="Enter Phone" />
+        </div>
+        <div class="box address">
+          <label for="add"><span>Address</span></label>
+          <input id="add" type="add" placeholder="Enter Address" />
+        </div>
+        <div class="submit">
+          <button onclick="prompt('Student')" type="button">Submit</button>
+        </div>
+        <div class="reset">
+          <button type="reset">Reset</button>
+        </div>
       </form>
     </main>
-    <script src=""></script>
+    <script src="../js/admin-add.js"></script>
   </body>
 
 </html>

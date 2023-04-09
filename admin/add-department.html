@@ -2,11 +2,11 @@
 <html lang="en">
 
   <head>
-    <title></title>
+    <title>Add Department</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="../css/admin-navbar.css" rel="stylesheet" />
-    <link href="../css/admin-add.css" rel="stylesheet" />
+    <link href="../css/admin-add/admin-add-dept.css" rel="stylesheet" />
   </head>
 
   <body>
@@ -69,34 +69,23 @@
     <h1>Add Department</h1><br />
     <main>
       <form method="get">
-        <label for="dept_name">Department Name</label>
-        <input type="text" name="dept_name" id="dept_name" required>
-        <br>
-        <label for="dept_app">Department Appreviation</label>
-        <input type="text" name="dept_app" id="dept_app" maxlength="6">
-        <br>
-        <select name="dept_instructor" id="dept_instructor" required>
-          <option value="">Choose Instructor</option>
-          <option value="1">Prof:</option>
-          <option value="2">Prof:</option>
-          <option value="3">Prof:</option>
-          <option value="4">Prof:</option>
-          <option value="5">Prof:</option>
-          <option value="6">Prof:</option>
-          <option value="7">Prof:</option>
-          <option value="8">Prof:</option>
-          <option value="9">Prof:</option>
-          <option value="10">Prof:</option>
-        </select>
-        <br>
-        <div class="res">
-          <button type="submit" value="add">Add Department</button>
+        <div class="name">
+          <label for="dept_name">Department Name</label>
+          <input type="text" name="dept_name" id="dept_name" required>
+        </div>
+        <div class="code">
+          <label for="dept_app">Department Code</label>
+          <input type="text" name="dept_code" id="dept_code" maxlength="6">
+        </div>
+        <div class="sub">
+          <button onclick="prompt('Department')" type="button" value="add">Add Department</button>
         </div>
         <div class="res">
           <button type="reset">Reset</button>
         </div>
       </form>
     </main>
+    <script src="../js/admin-add.js"></script>
   </body>
 
 </html>
