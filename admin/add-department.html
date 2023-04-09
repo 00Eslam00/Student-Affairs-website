@@ -2,80 +2,27 @@
 <html lang="en">
 
   <head>
-    <script
-      src="https://kit.fontawesome.com/20d7ce3dd9.js"
-      crossorigin="anonymous"
-    ></script>
-
     <title></title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="css/style.css" rel="stylesheet" />
-
-<style>
-
-ul{
-  list-style : none;
-  margin : 0;
-  padding : 0 ;
-}
-
-a{
-  color:black;
-  text-decoration : none;
-}
-
-header{
-  display : flex;
-  justify-content : space-between;
-}
-
-header nav{
-  display : flex;
-  justify-content : space-around;
-  width : 60%;
-}
-
-header nav>ul{
-  width : 100%;
-  display : flex;
-  justify-content : space-around;
-
-}
-
-.dropdown {
-  position : absolute;
-}
-
-.dropdown{
-  display : none  ;
-}
-
-li:hover > div{
-  display : block;
-  z-index : 100;
-}
-
-
-</style>
+    <link href="../css/admin-navbar.css" rel="stylesheet" />
+    <link href="../css/admin-add.css" rel="stylesheet" />
   </head>
+
   <body>
     <header>
       <div class="web-logo">
         <img src="../images/logo.jpg" width="60px">
       </div>
-
       <nav class="navbar-admin">
-        <ul>
+        <ul class="nav-ul">
           <li>
-            <a href="index.html"><i class="fa-solid fa-house"></i>Home</a>
+            <a href="index.html"><span class="nav-item">Home</span></a>
           </li>
-
           <li class="students">
-            <i class="fa-solid fa-book"></i>Students<i
-              class="fa fa-caret-down"
-            ></i>
-
+            <span class="nav-item">
+              <span>Student</span><i class="fa fa-caret-down"></i>
+            </span>
             <div class="dropdown content">
               <ul>
                 <li><a href="add-student.html">add student</a></li>
@@ -83,12 +30,10 @@ li:hover > div{
               </ul>
             </div>
           </li>
-            
-           <li class="courses">
-            <i class="fa-solid fa-book"></i>Courses<i
-              class="fa fa-caret-down"
-            ></i>
-
+          <li class="courses">
+            <span class="nav-item">
+              <span>Courses</span><i class="fa fa-caret-down"></i>
+            </span>
             <div class="dropdown content">
               <ul>
                 <li><a href="add-course.html">add course</a></li>
@@ -96,12 +41,10 @@ li:hover > div{
               </ul>
             </div>
           </li>
-          
-           <li class="department">
-            <i class="fa-solid fa-book"></i>Departments<i
-              class="fa fa-caret-down"
-            ></i>
-
+          <li class="department">
+            <span class="nav-item">
+              <span>Departments</span><i class="fa fa-caret-down"></i>
+            </span>
             <div class="dropdown content">
               <ul>
                 <li><a href="add-department.html">add department</a></li>
@@ -109,12 +52,10 @@ li:hover > div{
               </ul>
             </div>
           </li>
-
           <li class="account">
-            <i class="fa-solid fa-user-pen"></i>Account<i
-              class="fa fa-caret-down"
-            ></i>
-
+            <span class="nav-item">
+              <span>Account</span><i class="fa fa-caret-down"></i>
+            </span>
             <div class="dropdown content">
               <ul>
                 <li><a href="change-password.html">Change password</a></li>
@@ -125,50 +66,37 @@ li:hover > div{
         </ul>
       </nav>
     </header>
-        <h3>Add Department</h3>
+    <h1>Add Department</h1><br />
+    <main>
+      <form method="get">
+        <label for="dept_name">Department Name</label>
+        <input type="text" name="dept_name" id="dept_name" required>
         <br>
-        <form method="get">
-        <div>
-            <label for="dept_name">Department Name</label>
-            <input type="text" 
-            name="dept_name" 
-            id="dept_name"
-            required>
-        </div>
+        <label for="dept_app">Department Appreviation</label>
+        <input type="text" name="dept_app" id="dept_app" maxlength="6">
         <br>
-        <div>
-            <label for="dept_app">Department Appreviation</label>
-            <input type="text" 
-            name="dept_app" 
-            id="dept_app" 
-            >
-        </div>
+        <select name="dept_instructor" id="dept_instructor" required>
+          <option value="">Choose Instructor</option>
+          <option value="1">Prof:</option>
+          <option value="2">Prof:</option>
+          <option value="3">Prof:</option>
+          <option value="4">Prof:</option>
+          <option value="5">Prof:</option>
+          <option value="6">Prof:</option>
+          <option value="7">Prof:</option>
+          <option value="8">Prof:</option>
+          <option value="9">Prof:</option>
+          <option value="10">Prof:</option>
+        </select>
         <br>
-        <div>
-            <label for="dept_instructor">Dept Related Instructors</label>
-            <select name="dept_instructor" id="dept_instructor" multiple required>
-                <option value="1">Instructor 1</option>
-                <option value="2">Instructor 2</option>
-                <option value="3">Instructor 3</option>
-                <option value="4">Instructor 4</option>
-                <option value="5">Instructor 5</option>
-                <option value="6">Instructor 6</option>
-                <option value="7">Instructor 7</option>
-                <option value="8">Instructor 8</option>
-                <option value="9">Instructor 9</option>
-                <option value="10">Instructor 10</option>
-            </select>
+        <div class="res">
+          <button type="submit" value="add">Add Department</button>
         </div>
-        <br>
-        <div>
-            <button type="submit" value="add">Add Department</button>
+        <div class="res">
+          <button type="reset">Reset</button>
         </div>
-        <br>
-        <div>
-            <button type="reset">Reset</button>
-        </div>
-       
-    </form>
-    </body>
+      </form>
+    </main>
+  </body>
 
 </html>
