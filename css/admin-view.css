@@ -251,3 +251,8 @@ table tr:hover {
 .dialogue-btn:active {
 	background-color: #004a90;
 }
+
+select:hover option:hover {
+	background-color: #ff0000;
+	color: #fff;
+}
