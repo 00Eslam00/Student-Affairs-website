@@ -1,147 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <script
-      src="https://kit.fontawesome.com/20d7ce3dd9.js"
-      crossorigin="anonymous"
-    ></script>
 
-    <title></title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="css/style.css" rel="stylesheet" />
-<style>
+<head>
+  <script src="https://kit.fontawesome.com/20d7ce3dd9.js" crossorigin="anonymous"></script>
 
-ul{
-  list-style : none;
-  margin : 0;
-  padding : 0 ;
-}
+  <title></title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="css/style.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/navbar.css">
 
-a{
-  color:black;
-  text-decoration : none;
-}
+<body>
+  <div id="navbar-placeholder"></div>
 
-header{
-  display : flex;
-  justify-content : space-between;
-}
-
-header nav{
-  display : flex;
-  justify-content : space-around;
-  width : 60%;
-}
-
-header nav>ul{
-  width : 100%;
-  display : flex;
-  justify-content : space-around;
-
-}
-
-.dropdown {
-  position : absolute;
-}
-
-.dropdown{
-  display : none  ;
-}
-
-li:hover > div{
-  display : block;
-  z-index : 100;
-}
-
-
-</style>
-
-
-  <body>
-
-        <header>
-      <div class="web-logo">
-        <img src="images/logo.jpg" width="60px">
-      </div>
-
-      <nav class="navbar-student">
-        <ul>
-          <li>
-            <a href="index.html"><i class="fa-solid fa-house"></i>Home</a>
-          </li>
-
-          <li class="course">
-            <i class="fa-solid fa-book"></i>Courses<i
-              class="fa fa-caret-down"
-            ></i>
-
-            <div class="dropdown content">
-              <ul>
-                <li><a href="register-courses.html">Register new course</a></li>
-                <li><a href="#">Registered courses</a></li>
-              </ul>
-            </div>
-          </li>
-
-          <li>
-            <a href="student-profile.html"><i class="fa fa-fw fa-user"></i>Profile</a>
-          </li>
-
-          <li class="account">
-            <i class="fa-solid fa-user-pen"></i>Account<i
-              class="fa fa-caret-down"
-            ></i>
-
-            <div class="dropdown content">
-              <ul>
-                <li><a href="change-password.html">Change password</a></li>
-                <li><a href="login.html">Sign out</a></li>
-              </ul>
-            </div>
-          </li>
-        </ul>
-      </nav>
-    </header>
-
-
-    <div class="student-card">
-      <div class="name">
-        <p>Full name</p>
-        <div class="name-area">saead mohamed mohaed</div>
-      </div>
-
-      <div class="id">
-        <p>ID</p>
-        <div class="id-area">20210159</div>
-      </div>
-
-      <div class="gender">
-        <p>Gender</p>
-        <div class="gender-area">Male</div>
-      </div>
-
-      <div class="gpa">
-        <p>GPA</p>
-        <div class="gpa-area">3.28</div>
-      </div>
-
-      <div class="level">
-        <p>Level</p>
-        <div class="level-area">2</div>
-      </div>
-
-      <div class="email">
-        <p>E-mail</p>
-        <div class="email-area">saeadtest@gmail.com</div>
-      </div>
-
-      <div class="department">
-        <p>Department</p>
-        <div class="department-area">CS</div>
-      </div>
-
-      <a href="edit-student-profile.html">edit</a>
+  <div class="student-card">
+    <div class="name">
+      <p>Full name</p>
+      <div class="name-area">saead mohamed mohaed</div>
     </div>
-  </body>
+
+    <div class="id">
+      <p>ID</p>
+      <div class="id-area">20210159</div>
+    </div>
+
+    <div class="gender">
+      <p>Gender</p>
+      <div class="gender-area">Male</div>
+    </div>
+
+    <div class="gpa">
+      <p>GPA</p>
+      <div class="gpa-area">3.28</div>
+    </div>
+
+    <div class="level">
+      <p>Level</p>
+      <div class="level-area">2</div>
+    </div>
+
+    <div class="email">
+      <p>E-mail</p>
+      <div class="email-area">saeadtest@gmail.com</div>
+    </div>
+
+    <div class="department">
+      <p>Department</p>
+      <div class="department-area">CS</div>
+    </div>
+
+    <a href="edit-student-profile.html">edit</a>
+  </div>
+</body>
+
 </html>

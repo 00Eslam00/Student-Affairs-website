@@ -1,151 +1,71 @@
 <!DOCTYPE html>
 
 <html>
-  <head>
 
-    <link rel="css/all.min.css" type="" href="" />
+<head>
 
-    <script
-      src="https://kit.fontawesome.com/20d7ce3dd9.js"
-      crossorigin="anonymous"
-    ></script>
+  <link rel="css/all.min.css" type="" href="" />
+  <link rel="stylesheet" href="css/register-courses.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <script src="https://kit.fontawesome.com/20d7ce3dd9.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/20d7ce3dd9.js" crossorigin="anonymous"></script>
+  
+</head>
 
-
-    <style>
-      ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-      }
-
-      a {
-        color: black;
-        text-decoration: none;
-      }
-
-      header {
-        display: flex;
-        justify-content: space-between;
-      }
-
-      header nav {
-        display: flex;
-        justify-content: space-around;
-        width: 60%;
-      }
-
-      header nav > ul {
-        width: 100%;
-        display: flex;
-        justify-content: space-around;
-      }
-
-      .dropdown {
-        position: absolute;
-      }
-
-      .dropdown {
-        display: none;
-      }
-
-      li:hover > div {
-        display: block;
-        z-index: 100;
-      }
-    </style>
- 
-  </head>
-
-  <body>
-    <header>
-      <div class="web-logo">
-        <img src="images/logo.jpg" width="60px">
+<body>
+  <div id="navbar-placeholder"></div>
+  <div class="row-form">
+    <div class="register-box">
+      <div class="header-box">
+        Register New Course(s)
       </div>
+      <form action="" method="" target="_self">
+        <div class="ecourses-list">
+          <div class="l1">
+            <label for="ecourses">Eligible Courses</label>
+          </div>
+          <div>
+            <select name="ecourses" id="ecourses" multiple="multiple" size="10">
+              <option value="0">HU111-Technical Report Writing</option>
+              <option value="1">IT111-Electronics</option>
+              <option value="2">ST222-Probability and Statistics-2</option>
+              <option value="3">IS231-Web Technology</option>
+              <option value="4">course-2</option>
+              <option value="5">course-3</option>
+            </select>
+          </div>
+        </div>
+        <div class="b1">
+          <button><i class="fa-solid fa-angles-right fa-2x" style="color: #ffffff;"></i></button>
+        </div>
+        <div class="b2">
+          <button><i class="fa-solid fa-angles-right fa-rotate-180 fa-2x" style="color: #ffffff;"></i></button>
+        </div>
+        <div class="rg-courses-list">
+          <div class="l2">
+            <label for="rg-courses">Current Registered Courses</label>
+          </div>
+          <div>
+            <select name="crr-rg-courses" id="rg-courses" multiple="multiple" aria-readonly="true" aria-disabled="true"
+              size="10">
+              <option value="0">course-4</option>
+              <option value="1">course-5</option>
+              <option value="2">course-6</option>
+              <option value="3">course-1</option>
+              <option value="4">course-2</option>
+              <option value="5">course-3</option>
+            </select>
+          </div>
+        </div>
+        <div class="box-input">
+          <input type="submit" value="Select" />
+          <input type="reset" value="Clear" />
+        </div>
+      </form>
+    </div>
+  </div>
+  <script src="js/student-register-courses.js"></script>
+  <script src="js/nav-std.js"></script>
+</body>
 
-      <nav class="navbar-student">
-        <ul>
-          <li>
-            <a href="index.html"><i class="fa-solid fa-house"></i>Home</a>
-          </li>
-
-          <li class="course">
-            <i class="fa-solid fa-book"></i>Courses<i
-              class="fa fa-caret-down"
-            ></i>
-
-            <div class="dropdown content">
-              <ul>
-                <li><a href="register-courses.html">Register new course</a></li>
-                <li><a href="#">Registered courses</a></li>
-              </ul>
-            </div>
-          </li>
-
-          <li>
-            <a href="student-profile.html"><i class="fa fa-fw fa-user"></i>Profile</a>
-          </li>
-
-          <li class="account">
-            <i class="fa-solid fa-user-pen"></i>Account<i
-              class="fa fa-caret-down"
-            ></i>
-
-            <div class="dropdown content">
-              <ul>
-                <li><a href="change-password.html">Change password</a></li>
-                <li><a href="login.html">Sign out</a></li>
-              </ul>
-            </div>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <form action="" method="" target="_self">
-      <label for="e-courses"><span>Eligible Courses</span></label>
-      <div class="ecourses-list">
-        <select
-          name="eligiblecourses"
-          id="e-courses"
-          multiple="multiple"
-          size="10"
-        >
-          <optgroup label="Mandatory">
-            <option value="0">course-4</option>
-            <option value="1">course-5</option>
-            <option value="2">course-6</option>
-          </optgroup>
-          <optgroup label="Elective">
-            <option value="3">course-1</option>
-            <option value="4">course-2</option>
-            <option value="5">course-3</option>
-          </optgroup>
-        </select>
-      </div>
-      <label for="rg-courses"><span>Current Registered Courses</span></label>
-      <div class="rg-courses-list">
-        <select
-          name="crr-rg-courses"
-          id="rg-courses"
-          multiple="multiple"
-          disabled
-          aria-readonly="true"
-          aria-disabled="true"
-          size="10"
-        >
-          <optgroup label="Mandatory">
-            <option value="0">course-4</option>
-            <option value="1">course-5</option>
-            <option value="2">course-6</option>
-          </optgroup>
-          <optgroup label="Elective">
-            <option value="3">course-1</option>
-            <option value="4">course-2</option>
-            <option value="5">course-3</option>
-          </optgroup>
-        </select>
-      </div>
-      <input type="submit" value="Select" />
-      <input type="reset" value="Clear" />
-    </form>
-  </body>
 </html>

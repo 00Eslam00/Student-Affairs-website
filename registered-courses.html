@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link href="css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/registered-courses.css">
+</head>
+
+<body>
+  <div class="row">
+    <nav>
+      <a href="index.html" class="web-logo"><img src="images/logo.jpg" /><span>FCI Fighters Team</span></a>
+      <ul class="navbar-content">
+        <li class="nav-el">
+          <a href="index.html" class="navbar-el"><i class="fa-solid fa-house"></i>Home</a>
+        </li>
+
+        <li class="nav-el dropdown">
+          <a href="javascript:void(0)" class="active dropbtn navbar-el"><i class="fa-solid fa-book"></i>Coursess<i
+              class="fa fa-caret-down dropdown-icon"></i></a>
+
+          <div class="dropdown-content">
+            <a href="register-courses.html">Register new course</a>
+            <a href="registered-courses.html">Registered courses</a>
+          </div>
+        </li>
+
+        <li class="nav-el">
+          <a href="student-profile.html" class="nav-el navbar-el"><i class="fa-solid fa-user"></i>Profile</a>
+        </li>
+
+        <li class="nav-el dropdown">
+          <a href="javascript:void(0)" class="dropbtn navbar-el"><i class="fa-solid fa-right-to-bracket"></i>Account<i
+              class="fa fa-caret-down dropdown-icon"></i></a>
+          <div class="dropdown-content">
+            <a href="change-password.html">Change password</a>
+            <a href="login.html">Sign out</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div class="box-courses">
+    <div class="box-header">
+      Student Courses
+    </div>
+    <div class="box-filter">
+      <div class="l1">
+        <div>
+          <label for="y">Year</label>
+        </div>
+        <div>
+          <select name="year" id="y">
+            <option value="0">All</option>
+            <option value="1">2021</option>
+            <option value="2">2022</option>
+            <option value="3">2023</option>
+          </select>
+        </div>
+      </div>
+      <div class="l2">
+        <div>
+          <label for="l">Level</label>
+        </div>
+        <div>
+          <select name="level" id="l">
+            <option value="0">All</option>
+            <option value="1">First Level</option>
+            <option value="1">Second Level</option>
+            <option value="1">Third Level</option>
+            <option value="1">Fourth Level</option>
+            <option value="1">Graduated</option>
+          </select>
+        </div>
+      </div>
+      <div class="l3">
+        <div>
+          <label for="t">Term</label>
+        </div>
+        <div>
+          <select name="term" id="t">
+            <option value="0">All</option>
+            <option value="1">First Term</option>
+            <option value="2">Second Term</option>
+            <option value="3">Summer Term</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <table>
+      <thead>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Hours</th>
+        <th>Year</th>
+        <th>Grade</th>
+        <th>Term Work</th>
+        <th>Exam Work</th>
+        <th>Result</th>
+        <th>Level</th>
+        <th>Term</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>HU117</td>
+          <td>Human Rights</td>
+          <td>2</td>
+          <td>2021</td>
+          <td>C+</td>
+          <td>35</td>
+          <td>39</td>
+          <td>74</td>
+          <td>First Level</td>
+          <td>First Term</td>
+        </tr>
+        <tr>
+          <td>MA111</td>
+          <td>Math-1</td>
+          <td>3</td>
+          <td>2021</td>
+          <td>B</td>
+          <td>35</td>
+          <td>40</td>
+          <td>75</td>
+          <td>First Level</td>
+          <td>First Term</td>
+        </tr>
+        <tr>
+          <td>HU113</td>
+          <td>Creative Thinking and Communication Skills</td>
+          <td>2</td>
+          <td>2021</td>
+          <td>A</td>
+          <td>28</td>
+          <td>57</td>
+          <td>85</td>
+          <td>First Level</td>
+          <td>First Term</td>
+        </tr>
+        <tr>
+          <td>HU111</td>
+          <td>Technical Report Writing</td>
+          <td>2</td>
+          <td>2021</td>
+          <td>C+</td>
+          <td>33</td>
+          <td>41</td>
+          <td>74</td>
+          <td>First Level</td>
+          <td>First Term</td>
+        </tr>
+        <tr>
+          <td>IT111</td>
+          <td>Electronics</td>
+          <td>3</td>
+          <td>2021</td>
+          <td>A</td>
+          <td>29</td>
+          <td>56</td>
+          <td>85</td>
+          <td>First Level</td>
+          <td>First Term</td>
+        </tr>
+        <tr>
+          <td>MA214</td>
+          <td>Math-3</td>
+          <td>3</td>
+          <td>2022</td>
+          <td>A</td>
+          <td>39</td>
+          <td>48</td>
+          <td>87</td>
+          <td>Second Level</td>
+          <td>First Term</td>
+        </tr>
+        <tr>
+          <td>ST222</td>
+          <td>Probability and Statistics-2</td>
+          <td>3</td>
+          <td>2022</td>
+          <td>C+</td>
+          <td>32</td>
+          <td>38</td>
+          <td>70</td>
+          <td>Second Level</td>
+          <td>First Term</td>
+        </tr>
+        <tr>
+          <td>IS211</td>
+          <td>Introduction to Database Systems</td>
+          <td>3</td>
+          <td>2022</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Second Level</td>
+          <td>Second Term</td>
+        </tr>
+        <tr>
+          <td>IS231</td>
+          <td>Web Technology</td>
+          <td>3</td>
+          <td>2022</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Second Level</td>
+          <td>Second Term</td>
+        </tr>
+        <tr>
+          <td>IT221</td>
+          <td>Computer Networks Technology</td>
+          <td>3</td>
+          <td>2022</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Second Level</td>
+          <td>Second Term</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,134 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    text-decoration: none;
+    font-size: large;
+}
+
+.row-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+select::-webkit-scrollbar {
+    display: none;
+}
+
+form {
+    margin-top: 50px;
+    position: relative;
+}
+
+.register-box {
+    background-color: rgba(0, 0, 0, .02);
+    border-radius: 5px;
+    width: calc(100% - 100px);
+    margin: 10px;
+    margin-top: 50px;
+    height: 500px;
+}
+
+.header-box {
+    padding: 20px;
+    margin-bottom: 0;
+    background-color: rgba(0, 0, 0, .03);
+    border: 1px solid rgba(0, 0, 0, .125);
+    border-radius: 5px 5px 5px 0px;
+    font-size: x-large;
+    font-weight: bold;
+    text-align: center;
+}
+
+select option {
+    margin-bottom: 5px;
+    padding: 5px;
+}
+
+option[selected] {
+    background-color: red;
+}
+
+select option:checked {
+    background-color: white;
+    color: black;
+}
+
+select {
+    width: 400px;
+    height: 250px;
+    padding: 20px;
+    background-color: #e9ecef;
+}
+
+.ecourses-list {
+    margin-left: 50px;
+    width: fit-content;
+}
+
+.rg-courses-list {
+    position: absolute;
+    right: 0;
+    margin-right: 50px;
+    top: 0;
+}
+
+.b1 button,
+.b2 button {
+    background-color: #3aa8ef;
+    width: 60px;
+    height: 55px;
+    color: white;
+    border: 2px solid hsl(204, 85%, 40%);
+    border-radius: 5px;
+}
+
+.b1,
+.b2 {
+    position: absolute;
+    margin: auto;
+}
+
+.b1 {
+    top: 60px;
+    left: calc(50% - 30px);
+}
+
+.b2 {
+    bottom: 70px;
+    left: calc(50% - 50px);
+}
+
+form input {
+    width: 100px;
+    height: 40px;
+    position: absolute;
+    left: calc(50% + 10px);
+    bottom: -100px;
+    background-color: #3aa8ef;
+    color: white;
+    border-radius: 5px;
+    border: 2px solid hsl(204, 85%, 40%);
+    font-size: larger;
+    margin-bottom: 40px;
+}
+
+form input:nth-last-child(2) {
+    left: calc(50% - 140px);
+}
+
+button:hover,
+input:hover {
+    background-color: hsl(204, 85%, 40%);
+}
+
+.l1,
+.l2 {
+    margin-bottom: 10px;
+    background-color: rgba(0, 0, 0, .03);
+    padding: 5px;
+}
+
+.l1 label, .l2 label {
+    font-size: x-large;
+}

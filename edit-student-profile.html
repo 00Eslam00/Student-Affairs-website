@@ -1,133 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title></title>
-       <script
-      src="https://kit.fontawesome.com/20d7ce3dd9.js"
-      crossorigin="anonymous"
-    ></script>
 
-    <title></title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="css/style.css" rel="stylesheet" />
-<style>
+<head>
+  <title></title>
+  <script src="https://kit.fontawesome.com/20d7ce3dd9.js" crossorigin="anonymous"></script>
 
-ul{
-  list-style : none;
-  margin : 0;
-  padding : 0 ;
-}
+  <title></title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="css/style.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/navbar.css">
 
-a{
-  color:black;
-  text-decoration : none;
-}
+  </style>
+</head>
 
-header{
-  display : flex;
-  justify-content : space-between;
-}
+<body>
+  <div class="row">
+    <nav>
+      <a href="index.html" class="web-logo"><img src="images/logo.jpg" /><span>FCI Fighters Team</span></a>
+      <ul class="navbar-content">
+        <li class="nav-el">
+          <a href="index.html" class="navbar-el"><i class="fa-solid fa-house"></i>Home</a>
+        </li>
 
-header nav{
-  display : flex;
-  justify-content : space-around;
-  width : 60%;
-}
+        <li class="nav-el dropdown">
+          <a href="javascript:void(0)" class="dropbtn navbar-el"><i class="fa-solid fa-book"></i>Coursess<i
+              class="fa fa-caret-down dropdown-icon"></i></a>
 
-header nav>ul{
-  width : 100%;
-  display : flex;
-  justify-content : space-around;
+          <div class="dropdown-content">
+            <a href="register-courses.html">Register new course</a>
+            <a href="registered-courses.html">Registered courses</a>
+          </div>
+        </li>
 
-}
+        <li class="nav-el">
+          <a href="student-profile.html" class="active nav-el navbar-el"><i class="fa-solid fa-user"></i>Profile</a>
+        </li>
 
-.dropdown {
-  position : absolute;
-}
+        <li class="nav-el dropdown">
+          <a href="javascript:void(0)" class="dropbtn navbar-el"><i class="fa-solid fa-right-to-bracket"></i>Account<i
+              class="fa fa-caret-down dropdown-icon"></i></a>
+          <div class="dropdown-content">
+            <a href="change-password.html">Change password</a>
+            <a href="login.html">Sign out</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
 
-.dropdown{
-  display : none  ;
-}
+  <h2>General information</h2>
+  <form>
+    <label for="">name</label>
+    <input type="" name="" value="saead mohemed mohamed" disabled />
 
-li:hover > div{
-  display : block;
-  z-index : 100;
-}
+    <label for="">ID</label>
+    <input type="" name="" value="2021203" disabled />
 
+    <label for="">GPA</label>
+    <input type="" name="" value="3.66" disabled />
 
-</style>
-  </head>
-  <body>
-        <header>
-      <div class="web-logo">
-        <img src="images/logo.jpg" width="60px">
-      </div>
+    <label for="">Level</label>
+    <input type="" name="" value="2" disabled />
 
-      <nav class="navbar-student">
-        <ul>
-          <li>
-            <a href="index.html"><i class="fa-solid fa-house"></i>Home</a>
-          </li>
+    <label for="">Department</label>
+    <input type="" name="" value="General" disabled />
 
-          <li class="course">
-            <i class="fa-solid fa-book"></i>Courses<i
-              class="fa fa-caret-down"
-            ></i>
+    <label for="">Mobile number</label>
+    <input type="" name="" value="20123333133" />
 
-            <div class="dropdown content">
-              <ul>
-                <li><a href="register-courses.html">Register new course</a></li>
-                <li><a href="#">Registered courses</a></li>
-              </ul>
-            </div>
-          </li>
+    <label for="">E-mail</label>
+    <input type="" name="" value="saead@example.com" />
 
-          <li>
-            <a href="student-profile.html"><i class="fa fa-fw fa-user"></i>Profile</a>
-          </li>
+    <input type="submit" name="" value="Save" />
+  </form>
 
-          <li class="account">
-            <i class="fa-solid fa-user-pen"></i>Account<i
-              class="fa fa-caret-down"
-            ></i>
+</body>
 
-            <div class="dropdown content">
-              <ul>
-                <li><a href="change-password.html">Change password</a></li>
-                <li><a href="login.html">Sign out</a></li>
-              </ul>
-            </div>
-          </li>
-        </ul>
-      </nav>
-    </header>
-
-    <h2>General information</h2>
-    <form>
-      <label for="">name</label>
-      <input type="" name="" value="saead mohemed mohamed" disabled />
-
-      <label for="">ID</label>
-      <input type="" name="" value="2021203" disabled />
-
-      <label for="">GPA</label>
-      <input type="" name="" value="3.66" disabled />
-
-      <label for="">Level</label>
-      <input type="" name="" value="2" disabled />
-
-      <label for="">Department</label>
-      <input type="" name="" value="General" disabled />
-
-      <label for="">Mobile number</label>
-      <input type="" name="" value="20123333133" />
-
-      <label for="">E-mail</label>
-      <input type="" name="" value="saead@example.com" />
-
-      <input type="submit" name="" value="Save" />
-    </form>
-
-  </body>
 </html>
