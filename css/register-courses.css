@@ -43,10 +43,7 @@ form {
 select option {
     margin-bottom: 5px;
     padding: 5px;
-}
-
-option[selected] {
-    background-color: red;
+    cursor: pointer;
 }
 
 select option:checked {
@@ -141,5 +138,7 @@ input:hover {
 }
 
 .selected {
-    background-color: red;
+    background-color: #3aa8ef;
+    border-radius: 5px;
+    color: white;
 }
