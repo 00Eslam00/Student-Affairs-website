@@ -122,3 +122,7 @@ nav .navbar-content .nav-el{
 nav .dropdown-icon {
     margin-left: 5px;
 }
+
+nav .dropdown.clicked {
+    background-color: red;
+}
