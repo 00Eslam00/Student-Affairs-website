@@ -1,14 +1,14 @@
-function prompt(ele){
-    let dialog=document.createElement('div');
-    dialog.classList.add('dialog');
-    let paragraph=document.createElement('p');
-    let button=document.createElement('button');
-    button.classList.add('d-btn');
-    paragraph.textContent=`A new ${ele} has been added successfully`;
-    dialog.appendChild(paragraph);
-    dialog.appendChild(button);
-    document.body.appendChild(dialog);
-    dialog.style.cssText=`position:absolute;
+function prompt(ele) {
+	let dialog = document.createElement('div');
+	dialog.classList.add('dialog');
+	let paragraph = document.createElement('p');
+	let button = document.createElement('button');
+	button.classList.add('d-btn');
+	paragraph.textContent = `A new ${ele} has been added successfully`;
+	dialog.appendChild(paragraph);
+	dialog.appendChild(button);
+	document.body.appendChild(dialog);
+	dialog.style.cssText = `position:absolute;
     top:50%;
     left:50%;
     transform:translate(-50%,-50%);
@@ -24,8 +24,10 @@ function prompt(ele){
     display:flex;
     flex-direction:column;
     `;
-    button.textContent='OK';
+	button.textContent = 'OK';
 }
-document.addEventListener('click',function(e){
-    if(e.target.tagName != 'BUTTON'|| e.target.classList.contains('d-btn')){
-    this.querySelector('.dialog').remove();}});
+document.addEventListener('click', function (e) {
+	if (e.target.tagName != 'BUTTON' || e.target.classList.contains('d-btn')) {
+		this.querySelector('.dialog').remove();
+	}
+});

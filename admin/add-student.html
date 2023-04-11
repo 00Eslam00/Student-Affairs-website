@@ -2,78 +2,76 @@
 <html lang="en">
 
 <head>
-  <title>Add Student</title>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <script src="https://kit.fontawesome.com/20d7ce3dd9.js" crossorigin="anonymous"></script>
-  <link href="../css/admin-add/admin-add-student.css" rel="stylesheet" />
-  <link rel="stylesheet" href="../css/navbar.css">
-  <link rel="stylesheet" href="../css/navbar-admin.css">
+	<title>Add Student</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<script src="https://kit.fontawesome.com/20d7ce3dd9.js" crossorigin="anonymous"></script>
+	<link href="../css/admin-add/admin-add-student.css" rel="stylesheet" />
+	<link rel="stylesheet" href="../css/navbar.css">
+	<link rel="stylesheet" href="../css/navbar-admin.css">
 
-  <style>
-    nav #students,
-    nav #students i {
-      background-color: #3aa8ef;
-      color: white;
-      border-radius: 5px;
-    }
-  </style>
+	<style>
+		nav #students,
+		nav #students i {
+			background-color: #3aa8ef;
+			color: white;
+			border-radius: 5px;
+		}
+
+	</style>
 </head>
 
 <body>
-  <div id="navbar-placeholder"></div>
-  <h1>Add Student</h1><br />
-  <main class="main">
-    <form id="add-student-form" method="post">
-      <div class="box fname">
-        <label for="firstname"><span>First Name</span></label>
-        <input id="firstname" type="text" placeholder="Enter Name" />
-      </div>
-      <div class="box lname">
-        <label for="lastname"><span>Last Name </span></label>
-        <input id="lastname" type="text" placeholder="Enter Name" />
-      </div>
-      <div class="box bdate">
-        <lablel for="birthdate"><b>Brith Date</b> </lablel>
-        <input id="birthdate" type="date" />
-      </div>
-      <div class="box gender">
-        <label for="stat"><span>Select Gender</span></label>
-        <select id="gender" name="gender" required>
-          <option value="male">Male</option>
-          <option value="female">Female</option>
-          <option value="other">Other</option>
-        </select>
-      </div>
-      <div class="box stat">
-        <label for="stat"><span>Select Status </span></label>
-        <select name="stat" id="stat" required>
-          <option value="active">Active</option>
-          <option value="not-active">Not-Active</option>
-        </select>
-      </div>
-      <div class="box email">
-        <label for="email"><span>Email</span></label>
-        <input id="email" type="email" placeholder="Enter email" />
-      </div>
-      <div class="box phone">
-        <label for="phone"><span>Phone</span></label>
-        <input id="phone" type="tel" placeholder="Enter Phone" />
-      </div>
-      <div class="box address">
-        <label for="add"><span>Address</span></label>
-        <input id="add" type="add" placeholder="Enter Address" />
-      </div>
-      <div class="submit">
-        <button onclick="prompt('Student')" type="button">Submit</button>
-      </div>
-      <div class="reset">
-        <button type="reset">Reset</button>
-      </div>
-    </form>
-  </main>
-  <script src="../js/admin-add.js"></script>
-  <script src="../js/nav-admin.js"></script>
+	<div id="navbar-placeholder"></div>
+	<h1>Add Student</h1><br />
+	<main class="main">
+		<form id="add-student-form" method="post">
+			<div class="box name">
+				<label for="name"><span>Name</span></label>
+				<input id="name" type="text" placeholder="Enter Name" />
+			</div>
+
+			<div class="box bdate">
+				<label for="birthdate">Brith Date</label>
+				<input id="birthdate" type="date" />
+			</div>
+			<div class="box gender">
+				<label for="stat"><span>Select Gender</span></label>
+				<select id="gender" name="gender" required>
+					<option value="male">Male</option>
+					<option value="female">Female</option>
+					<option value="other">Other</option>
+				</select>
+			</div>
+			<div class="box stat">
+				<label for="stat"><span>Select Status </span></label>
+				<select name="stat" id="stat" required>
+					<option value="active">Active</option>
+					<option value="not-active">Not-Active</option>
+				</select>
+			</div>
+			<div class="box email">
+				<label for="email"><span>Email</span></label>
+				<input id="email" type="email" placeholder="Enter email" />
+			</div>
+			<div class="box phone">
+				<label for="phone"><span>Phone</span></label>
+				<input id="phone" type="tel" placeholder="Enter Phone" />
+			</div>
+			<div class="box address">
+				<label for="add"><span>Address</span></label>
+				<input id="add" type="add" placeholder="Enter Address" />
+			</div>
+			<div class="submit">
+				<button onclick="prompt('Student')" type="button">Submit</button>
+			</div>
+			<div class="reset">
+				<button type="reset">Reset</button>
+			</div>
+		</form>
+	</main>
+	<script src="../js/admin-add.js"></script>
+	<script src="../js/nav-admin.js"></script>
 </body>
 
 </html>

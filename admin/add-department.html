@@ -1,47 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <title>Add Department</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="../css/admin-add/admin-add-dept.css" rel="stylesheet" />
-      <link rel="stylesheet" href="../css/navbar.css">
-      <link rel="stylesheet" href="../css/navbar-admin.css">
-      
-      <style>
-        nav #home,
-        nav #home i {
-          background-color: #3aa8ef;
-          color: white;
-          border-radius: 5px;
-        }
-      </style>
-  </head>
+<head>
+	<title>Add Department</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link href="../css/admin-add/admin-add-dept.css" rel="stylesheet" />
+	<link rel="stylesheet" href="../css/navbar.css">
+	<link rel="stylesheet" href="../css/all.min.css">
+	<!-- <link rel="stylesheet" href="../css/navbar-admin.css"> -->
 
-  <body>
-    <div id="navbar-placeholder"></div>
-    <h1>Add Department</h1><br />
-    <main>
-      <form method="get">
-        <div class="name">
-          <label for="dept_name">Department Name</label>
-          <input type="text" name="dept_name" id="dept_name" required>
-        </div>
-        <div class="code">
-          <label for="dept_app">Department Code</label>
-          <input type="text" name="dept_code" id="dept_code" maxlength="6">
-        </div>
-        <div class="sub">
-          <button onclick="prompt('Department')" type="button" value="add">Add Department</button>
-        </div>
-        <div class="res">
-          <button type="reset">Reset</button>
-        </div>
-      </form>
-    </main>
-    <script src="../js/admin-add.js"></script>
-    <script src="../js/nav-admin.js"></script>
-  </body>
+	<style>
+		nav #home,
+		nav #home i {
+			background-color: #3aa8ef;
+			color: white;
+			border-radius: 5px;
+		}
+
+	</style>
+</head>
+
+<body>
+	<div id="navbar-placeholder"></div>
+	<h1>Add Department</h1><br />
+	<main>
+		<form method="get">
+			<div class="name">
+				<label for="dept_name">Department Name</label>
+				<input type="text" name="dept_name" id="dept_name" required>
+			</div>
+			<div class="code">
+				<label for="dept_app">Department Code</label>
+				<input type="text" name="dept_code" id="dept_code" maxlength="6">
+			</div>
+			<div class="sub">
+				<button onclick="prompt('Department')" type="button" value="add">Submit</button>
+			</div>
+			<div class="res">
+				<button type="reset">Reset</button>
+			</div>
+		</form>
+	</main>
+	<script src="../js/admin-add.js"></script>
+	<script src="../js/nav-admin.js"></script>
+</body>
 
 </html>
