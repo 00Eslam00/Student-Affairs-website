@@ -16,7 +16,7 @@
       color: white;
       border-radius: 5px;
     }
-  </style>
+    </style>
 
 </head>
 
@@ -33,51 +33,49 @@
             <label for="ecourses">Eligible Courses</label>
           </div>
           <div>
-            <select name="ecourses" id="ecourses" multiple="multiple" size="10">
-              <option value="0">HU111-Technical Report Writing</option>
-              <option value="1">IT111-Electronics</option>
-              <option value="2">ST222-Probability and Statistics-2</option>
-              <option value="3">IS231-Web Technology</option>
-              <option value="4">CS251-
+            <select name="ecourses" multiple id="ecourses" size="20">
+              <option value="0" id="0">HU111-Technical Report Writing</option>
+              <option value="1" id="1">IT111-Electronics</option>
+              <option value="2" id="2">ST222-Probability and Statistics-2</option>
+              <option value="3" id="3">IS231-Web Technology</option>
+              <option value="4" id="4">CS251-
                 Introduction to Software Engineering</option>
-              <option value="5">HU121-
+              <option value="5" id="5">HU121-
                 Fundamentals of Economies</option>
-            </select>
+              </select>
+            </div>
           </div>
-        </div>
-        <div class="b1">
-          <button><i class="fa-solid fa-angles-right fa-2x" style="color: #ffffff;"></i></button>
-        </div>
-        <div class="b2">
-          <button><i class="fa-solid fa-angles-right fa-rotate-180 fa-2x" style="color: #ffffff;"></i></button>
-        </div>
-        <div class="rg-courses-list">
-          <div class="l2">
-            <label for="rg-courses">Current Registered Courses</label>
+          <div class="b1">
+            <button id="go_right"><i class="fa-solid fa-angles-right fa-2x" style="color: #ffffff;"></i></button>
           </div>
-          <div>
-            <select name="crr-rg-courses" id="rg-courses" multiple="multiple" aria-readonly="true" aria-disabled="true"
-              size="10">
-              <option value="0">HU111-Technical Report Writing</option>
-              <option value="1">IT111-Electronics</option>
-              <option value="2">ST222-Probability and Statistics-2</option>
-              <option value="3">IS231-Web Technology</option>
-              <option value="4">CS251-
-                Introduction to Software Engineering</option>
-              <option value="5">HU121-
-                Fundamentals of Economies</option>
-            </select>
+          <div class="b2">
+            <button id="go_left"><i class="fa-solid fa-angles-right fa-rotate-180 fa-2x" style="color: #ffffff;"></i></button>
           </div>
-        </div>
-        <div class="box-input">
-          <input type="submit" value="Select" />
-          <input type="reset" value="Clear" />
-        </div>
+          <div class="rg-courses-list">
+            <div class="l2">
+              <label for="rg-courses">Selected Courses</label>
+            </div>
+            <div>
+              <select name="rg-courses" id="rcourses" multiple size="10">
+                size="10">
+                <!-- <option value="0">HU111-Technical Report Writing</option>
+                <option value="1">IT111-Electronics</option>
+                <option value="2">ST222-Probability and Statistics-2</option>
+                <option value="3">IS231-Web Technology</option>
+                <option value="4">CS251-
+                  Introduction to Software Engineering</option>
+                  <option value="5">HU121-
+                    Fundamentals of Economies</option> -->
+                  </select>
+                </div>
+              </div>
+              <input type="submit" value="Submit" />
+              <input type="reset" value="Reset" id="reset"/>
       </form>
     </div>
   </div>
-  <script src="js/student-register-courses.js"></script>
   <script src="js/nav-std.js"></script>
+  <script src="js/std-register-courses.js"></script>
 </body>
 
 </html>
