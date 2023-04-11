@@ -39,23 +39,31 @@ form {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-evenly;
+	height: calc(100vh - 200px);
 }
 
-label,
+
+.input {
+	height: 50px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
 input,
 select {
 	display: block;
 	margin-bottom: 10px;
 	border-radius: 8px;
 	outline-color: var(--mainColor);
+	width: 100%;
+	padding: 5px;
 }
 
 
-
-input,
-select {
-	width: 100%;
-	padding: 5px;
+.buttons{
+	display: flex;
+	justify-content: space-around;
 }
 
 button {
@@ -69,10 +77,4 @@ button {
 
 button:hover {
 	background-color: #0069d9;
-}
-
-.res {
-	font-size: 20px;
-	font-weight: bold;
-	display: inline-block;
 }

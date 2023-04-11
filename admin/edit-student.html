@@ -21,30 +21,35 @@
 
 <body>
 
-	<h1 class="he"> Edit Student Information </h1>
+	<h1 class="he">Edit Student Information</h1>
 	<div class="cont">
 		<form method="get">
 			<div class="input">
-				<label for="fulltName"> Full Name </label>
-				<input type="text" placeholder="Enter FName">
+				<label for="Name">Name</label>
+				<input id="Name" type="text" placeholder="Enter FName">
 			</div>
 			<div class="input">
-				<label for="studentBirth"> Student Birth Date </label>
-				<input type="date" placeholder="Enter BDate">
+				<label for="Birth">Birth Date</label>
+				<input id="Birth" type="date" placeholder="Enter BDate">
 			</div>
 			<div class="input">
-				<label for="studentLevel">Student Level</label>
-				<input type="text" value="second level" placeholder="Enter Level" disabled>
+				<label for="Level">Level</label>
+				<select id="Level">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+				</select>
 			</div>
 
 			<div class="input">
-				<label for="d-department">Student Department</label>
+				<label for="d-department">Department</label>
 				<select name="d-department" id="d-department">
 					<option value="1">department 1</option>
-					<option value="1">department 2</option>
-					<option value="1">department 3</option>
-					<option value="1">department 4</option>
-					<option value="1">department 5</option>
+					<option value="2">department 2</option>
+					<option value="3">department 3</option>
+					<option value="4">department 4</option>
+					<option value="5">department 5</option>
 				</select>
 			</div>
 			<div class="input">

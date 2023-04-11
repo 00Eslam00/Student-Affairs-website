@@ -240,9 +240,14 @@ document.addEventListener('contextmenu', function (e) {
 	contextMenuDiv.style.left = e.pageX + 'px';
 
 	editOptionLi.addEventListener('click', function () {
-		// Handle edit action
-		window.open("edit-student.html");
-		console.log('Edit row:', e.target.parentElement);
+		let tableType = document.querySelector("table");
+		if (tableType.classList.contains("std-table"))
+			window.open("edit-student.html");
+		else if (tableType.classList.contains("crs-table"))
+			window.open("edit-course.html");
+		else if (tableType.classList.contains("dept-table"))
+			window.open("edit-department.html");
+		//
 		const existingContextMenu = document.querySelector('#contextMenu');
 		if (existingContextMenu) {
 			existingContextMenu.remove();
