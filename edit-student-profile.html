@@ -10,45 +10,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link href="css/style.css" rel="stylesheet" />
   <link rel="stylesheet" href="css/navbar.css">
-
+  <style>
+    #profile,
+    #profile i {
+      background-color: #3aa8ef;
+      color: white;
+      border-radius: 5px;
+    }
   </style>
 </head>
 
 <body>
-  <div class="row">
-    <nav>
-      <a href="index.html" class="web-logo"><img src="images/logo.jpg" /><span>FCI Fighters Team</span></a>
-      <ul class="navbar-content">
-        <li class="nav-el">
-          <a href="index.html" class="navbar-el"><i class="fa-solid fa-house"></i>Home</a>
-        </li>
-
-        <li class="nav-el dropdown">
-          <a href="javascript:void(0)" class="dropbtn navbar-el"><i class="fa-solid fa-book"></i>Coursess<i
-              class="fa fa-caret-down dropdown-icon"></i></a>
-
-          <div class="dropdown-content">
-            <a href="register-courses.html">Register new course</a>
-            <a href="registered-courses.html">Registered courses</a>
-          </div>
-        </li>
-
-        <li class="nav-el">
-          <a href="student-profile.html" class="active nav-el navbar-el"><i class="fa-solid fa-user"></i>Profile</a>
-        </li>
-
-        <li class="nav-el dropdown">
-          <a href="javascript:void(0)" class="dropbtn navbar-el"><i class="fa-solid fa-right-to-bracket"></i>Account<i
-              class="fa fa-caret-down dropdown-icon"></i></a>
-          <div class="dropdown-content">
-            <a href="change-password.html">Change password</a>
-            <a href="login.html">Sign out</a>
-          </div>
-        </li>
-      </ul>
-    </nav>
-  </div>
-
+  <div id="navbar-placeholder"></div>
   <h2>General information</h2>
   <form>
     <label for="">name</label>
@@ -74,7 +47,7 @@
 
     <input type="submit" name="" value="Save" />
   </form>
-
+  <script src="js/nav-std.js"></script>
 </body>
 
 </html>

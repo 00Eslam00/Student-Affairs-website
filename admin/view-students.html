@@ -1,118 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 
-	<head>
-		<!-- <script src="https://kit.fontawesome.com/20d7ce3dd9.js" crossorigin="anonymous"></script> -->
-		<title></title>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link href="../css/all.min.css" rel="stylesheet" />
-		<link href="../css/admin-navbar.css" rel="stylesheet" />
-		<link href="../css/admin-view.css" rel="stylesheet" />
-	</head>
+<head>
+	<!-- <script src="https://kit.fontawesome.com/20d7ce3dd9.js" crossorigin="anonymous"></script> -->
+	<title></title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link href="../css/all.min.css" rel="stylesheet" />
+	<link href="../css/admin-view.css" rel="stylesheet" />
+	<link rel="stylesheet" href="../css/navbar.css">
+	<link rel="stylesheet" href="../css/navbar-admin.css">
+	<style>
+		nav #students,
+		nav #students i {
+			background-color: #3aa8ef;
+			color: white;
+			border-radius: 5px;
+		}
+	</style>
+</head>
 
-	<body>
-		<header>
-			<div class="web-logo">
-				<img src="../images/logo.jpg" width="60px">
-			</div>
-			<nav class="navbar-admin">
-				<ul class="nav-ul">
-					<li>
-						<a href="index.html"><span class="nav-item">Home</span></a>
-					</li>
-					<li class="students">
-						<span class="nav-item">
-							<span>Student</span><i class="fa fa-caret-down"></i>
-						</span>
-						<div class="dropdown content">
-							<ul>
-								<li><a href="add-student.html">add student</a></li>
-								<li><a href="view-students.html">view student</a></li>
-							</ul>
-						</div>
-					</li>
-					<li class="courses">
-						<span class="nav-item">
-							<span>Courses</span><i class="fa fa-caret-down"></i>
-						</span>
-						<div class="dropdown content">
-							<ul>
-								<li><a href="add-course.html">add course</a></li>
-								<li><a href="view-courses.html">view courses</a></li>
-							</ul>
-						</div>
-					</li>
-					<li class="department">
-						<span class="nav-item">
-							<span>Departments</span><i class="fa fa-caret-down"></i>
-						</span>
-						<div class="dropdown content">
-							<ul>
-								<li><a href="add-department.html">add department</a></li>
-								<li><a href="view-departments.html">view departments</a></li>
-							</ul>
-						</div>
-					</li>
-					<li class="account">
-						<span class="nav-item">
-							<span>Account</span><i class="fa fa-caret-down"></i>
-						</span>
-						<div class="dropdown content">
-							<ul>
-								<li><a href="change-password.html">Change password</a></li>
-								<li><a href="login.html">Sign out</a></li>
-							</ul>
-						</div>
-					</li>
-				</ul>
-			</nav>
-		</header>
-		<div class="container">
-			<form>
-				<select name="" id="" class="filters form-size selection">
-					<option value="Std-ID">Std-ID</option>
-					<option value="Name">Name</option>
-					<option value="Email">E-mail</option>
-					<option value="Mobile">Mobile</option>
-					<option value="GPA">GPA</option>
-					<option value="Gender">Gender</option>
-					<option value="Department">Department</option>
-					<option value="Level">Level</option>
-					<option value="Date">Date</option>
-				</select>
-				<input type="text" placeholder="Search..." maxlength="50" class="search-bar form-size" />
-				<button type="button" onclick="addFilter()" class="search-btn form-size">Search</button>
-			</form>
-			<div class="filter-values">
-			</div>
+<body>
+	<div id="navbar-placeholder"></div>
+	<div class="container">
+		<form>
+			<select name="" id="" class="filters form-size selection">
+				<option value="Std-ID">Std-ID</option>
+				<option value="Name">Name</option>
+				<option value="Email">E-mail</option>
+				<option value="Mobile">Mobile</option>
+				<option value="GPA">GPA</option>
+				<option value="Gender">Gender</option>
+				<option value="Department">Department</option>
+				<option value="Level">Level</option>
+				<option value="Date">Date</option>
+			</select>
+			<input type="text" placeholder="Search..." maxlength="50" class="search-bar form-size" />
+			<button type="button" onclick="addFilter()" class="search-btn form-size">Search</button>
+		</form>
+		<div class="filter-values">
 		</div>
-		<table class="std-table">
-			<thead>
-				<tr>
-					<th style="width: 10%;">Std-ID</th>
-					<th style="width: 15%;">Full-name</th>
-					<th style="width: 10%;">Birth-Date</th>
-					<th style="width: 5%;">GPA</th>
-					<th style="width: 10%;">Gender</th>
-					<th style="width: 5%;">Level</th>
-					<th style="width: 13%;">Department</th>
-					<th style="width: 10%;">E-mail</th>
-					<th style="width: 15%;">Mobile</th>
-					<th style="width: 10%;">
-						<select name="" id="" class="select-stat">
-							<option value="2">All</option>
-							<option value="1">active</option>
-							<option value="0">inactive</option>
-						</select>
-					</th>
-				</tr>
-			</thead>
-			<tbody>
-			</tbody>
-		</table>
-		<script src="../js/std-random-info.js"></script>
-		<script src="../js/admin-view.js"></script>
-	</body>
+	</div>
+	<table class="std-table">
+		<thead>
+			<tr>
+				<th style="width: 10%;">Std-ID</th>
+				<th style="width: 15%;">Full-name</th>
+				<th style="width: 10%;">Birth-Date</th>
+				<th style="width: 5%;">GPA</th>
+				<th style="width: 10%;">Gender</th>
+				<th style="width: 5%;">Level</th>
+				<th style="width: 13%;">Department</th>
+				<th style="width: 10%;">E-mail</th>
+				<th style="width: 15%;">Mobile</th>
+				<th style="width: 10%;">
+					<select name="" id="" class="select-stat">
+						<option value="2">All</option>
+						<option value="1">active</option>
+						<option value="0">inactive</option>
+					</select>
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+		</tbody>
+	</table>
+	<script src="../js/std-random-info.js"></script>
+	<script src="../js/admin-view.js"></script>
+	<script src="../js/nav-admin.js"></script>
+</body>
 
 </html>

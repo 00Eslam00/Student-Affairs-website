@@ -9,42 +9,18 @@
   <link href="css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="css/navbar.css">
   <link rel="stylesheet" href="css/registered-courses.css">
+  <style>
+    #courses,
+    #courses i {
+      background-color: #3aa8ef;
+      color: white;
+      border-radius: 5px;
+    }
+  </style>
 </head>
 
 <body>
-  <div class="row">
-    <nav>
-      <a href="index.html" class="web-logo"><img src="images/logo.jpg" /><span>FCI Fighters Team</span></a>
-      <ul class="navbar-content">
-        <li class="nav-el">
-          <a href="index.html" class="navbar-el"><i class="fa-solid fa-house"></i>Home</a>
-        </li>
-
-        <li class="nav-el dropdown">
-          <a href="javascript:void(0)" class="active dropbtn navbar-el"><i class="fa-solid fa-book"></i>Coursess<i
-              class="fa fa-caret-down dropdown-icon"></i></a>
-
-          <div class="dropdown-content">
-            <a href="register-courses.html">Register new course</a>
-            <a href="registered-courses.html">Registered courses</a>
-          </div>
-        </li>
-
-        <li class="nav-el">
-          <a href="student-profile.html" class="nav-el navbar-el"><i class="fa-solid fa-user"></i>Profile</a>
-        </li>
-
-        <li class="nav-el dropdown">
-          <a href="javascript:void(0)" class="dropbtn navbar-el"><i class="fa-solid fa-right-to-bracket"></i>Account<i
-              class="fa fa-caret-down dropdown-icon"></i></a>
-          <div class="dropdown-content">
-            <a href="change-password.html">Change password</a>
-            <a href="login.html">Sign out</a>
-          </div>
-        </li>
-      </ul>
-    </nav>
-  </div>
+  <div id="navbar-placeholder"></div>
   <div class="box-courses">
     <div class="box-header">
       Student Courses
@@ -229,6 +205,7 @@
       </tbody>
     </table>
   </div>
+  <script src="js/nav-std.js"></script>
 </body>
 
 </html>
