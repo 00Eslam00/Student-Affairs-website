@@ -19,7 +19,6 @@ function addFilter() {
 	for (let i = 0; i < filters.length; i++) {
 		if (filters[i].getAttribute("filter-name") == filter_value) {
 			filters[i].textContent = `${filter_value} = "${search_value}"`;
-			// console.log(filters[i].childNodes[0], filters[i].childNodes[1], `${filter_value} = "${search_value}"`)
 			filters[i].setAttribute("filter-value", search_value);
 			filters[i].appendChild(filter_icon);
 			flag = true;
@@ -139,17 +138,6 @@ function showConfirmationDialogue(message) {
 	});
 }
 
-// function confirmDelete() {
-// 	showConfirmationDialogue('Are you sure you want to delete this item?').then((confirmed) => {
-// 		if (confirmed) {
-// 			// Delete the item
-// 		} else {
-// 			// Do nothing
-// 		}
-// 	});
-// }
-
-
 
 
 // Events listeners
@@ -166,7 +154,9 @@ document.addEventListener("click", (ele) => {
 	if (ele.classList.contains("delete")) {
 		ele.parentElement.remove();
 		applyFilter();
-	} else if (ele.tagName.toLowerCase() === "tr" && ele.parentElement.tagName.toLowerCase() === "tbody") {
+	}
+
+	else if (ele.tagName.toLowerCase() === "tr" && ele.parentElement.tagName.toLowerCase() === "tbody") {
 		let x = document.querySelectorAll("table tbody tr")
 		for (let i = 0; i < x.length; i++) {
 			//x[i].ondblclick = () => window.open("edit-student.html");
@@ -181,15 +171,30 @@ document.addEventListener("click", (ele) => {
 			}
 		}
 	}
-});
 
+	else if (ele.classList.contains('select-stat')) {
+		let selectStat = document.querySelector('.select-stat');
+		let rows = document.querySelectorAll('.std-stat');
+		for (let i = 0; i < rows.length; i++) {
+			rows[i].parentElement.parentElement.classList.remove("hide-stat");
+		}
 
-document.addEventListener("change", (ele) => {
-	ele = ele.target;
-	if (ele.classList.contains("select-stat")) {
-		console.log(ele.value);
+		if (selectStat.value != 2) {
+			for (let i = 0; i < rows.length; i++) {
+				if (rows[i].value != selectStat.value)
+					rows[i].parentElement.parentElement.classList.add("hide-stat");
+			}
+		}
+	}
+
+	else if (ele.classList.contains('std-stat')) {
+		let selectStat = document.querySelector('.select-stat');
+		if (selectStat.value != 2 && selectStat.value != ele.value) {
+			ele.parentElement.parentElement.classList.add("hide-stat");
+		}
 	}
 });
+
 
 
 document.addEventListener('contextmenu', function (e) {
@@ -276,38 +281,5 @@ document.addEventListener('contextmenu', function (e) {
 
 	// Add context menu to the page
 	document.body.appendChild(contextMenuDiv);
-});
-
-//
-
-document.addEventListener('change', (ele) => {
-
-	ele = ele.target;
-	if (ele.classList.contains('select-stat')) {
-		let selectStat = document.querySelector('.select-stat');
-		let rows = document.querySelectorAll('.std-stat');
-		for (let i = 0; i < rows.length; i++) {
-			rows[i].parentElement.parentElement.classList.remove("hide-stat");
-		}
-
-		if (selectStat.value != 2) {
-			for (let i = 0; i < rows.length; i++) {
-				if (rows[i].value != selectStat.value)
-					rows[i].parentElement.parentElement.classList.add("hide-stat");
-			}
-		}
-	}
-});
-
-
-document.addEventListener("change", (ele) => {
-
-	ele = ele.target;
-	if (ele.classList.contains('std-stat')) {
-		let selectStat = document.querySelector('.select-stat');
-		if (selectStat.value != 2 && selectStat.value != ele.value) {
-			ele.parentElement.parentElement.classList.add("hide-stat");
-		}
-	}
 });
 
