@@ -26,7 +26,7 @@ form {
     width: calc(100% - 100px);
     margin: 10px;
     margin-top: 50px;
-    height: 500px;
+    height: 600px;
 }
 
 .header-box {
@@ -58,18 +58,18 @@ select {
     width: 400px;
     height: 250px;
     padding: 20px;
-    background-color: #e9ecef;
+    background-color: #e9ecef !important;
 }
 
 .ecourses-list {
-    margin-left: 50px;
+    margin-left: 60px;
     width: fit-content;
 }
 
 .rg-courses-list {
     position: absolute;
     right: 0;
-    margin-right: 50px;
+    margin-right: 60px;
     top: 0;
 }
 
@@ -81,6 +81,7 @@ select {
     color: white;
     border: 2px solid hsl(204, 85%, 40%);
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .b1,
@@ -91,30 +92,36 @@ select {
 
 .b1 {
     top: 60px;
-    left: calc(50% - 30px);
+    left: 0;
+    margin-left: 50%;
 }
 
 .b2 {
     bottom: 70px;
-    left: calc(50% - 50px);
+    right: 0;
+    margin-right: 50%;
 }
 
 form input {
     width: 100px;
     height: 40px;
     position: absolute;
-    left: calc(50% + 10px);
     bottom: -100px;
     background-color: #3aa8ef;
     color: white;
     border-radius: 5px;
     border: 2px solid hsl(204, 85%, 40%);
-    font-size: larger;
-    margin-bottom: 40px;
+    font-size: x-large;
+    margin-bottom: -20px;
+    cursor: pointer;
 }
 
 form input:nth-last-child(2) {
-    left: calc(50% - 140px);
+    right: calc(50% + 50px);
+}
+
+form input:nth-last-child(1) {
+    left: calc(50% + 50px);
 }
 
 button:hover,
@@ -131,4 +138,8 @@ input:hover {
 
 .l1 label, .l2 label {
     font-size: x-large;
+}
+
+.selected {
+    background-color: red;
 }
