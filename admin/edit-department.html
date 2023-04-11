@@ -11,120 +11,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="css/style.css" rel="stylesheet" />
-
-<style>
-
-ul{
-  list-style : none;
-  margin : 0;
-  padding : 0 ;
-}
-
-a{
-  color:black;
-  text-decoration : none;
-}
-
-header{
-  display : flex;
-  justify-content : space-between;
-}
-
-header nav{
-  display : flex;
-  justify-content : space-around;
-  width : 60%;
-}
-
-header nav>ul{
-  width : 100%;
-  display : flex;
-  justify-content : space-around;
-
-}
-
-.dropdown {
-  position : absolute;
-}
-
-.dropdown{
-  display : none  ;
-}
-
-li:hover > div{
-  display : block;
-  z-index : 100;
-}
-
-
-</style>
+      <link rel="stylesheet" href="../css/navbar.css">
+      <link rel="stylesheet" href="../css/navbar-admin.css">
+      
+      <style>
+        nav #departments,
+        nav #departments i {
+          background-color: #3aa8ef;
+          color: white;
+          border-radius: 5px;
+        }
+      </style>
   </head>
   <body>
-    <header>
-      <div class="web-logo">
-        <img src="../images/logo.jpg" width="60px">
-      </div>
-
-      <nav class="navbar-admin">
-        <ul>
-          <li>
-            <a href="index.html"><i class="fa-solid fa-house"></i>Home</a>
-          </li>
-
-          <li class="students">
-            <i class="fa-solid fa-book"></i>Students<i
-              class="fa fa-caret-down"
-            ></i>
-
-            <div class="dropdown content">
-              <ul>
-                <li><a href="add-student.html">add student</a></li>
-                <li><a href="view-students.html">view student</a></li>
-              </ul>
-            </div>
-          </li>
-            
-           <li class="courses">
-            <i class="fa-solid fa-book"></i>Courses<i
-              class="fa fa-caret-down"
-            ></i>
-
-            <div class="dropdown content">
-              <ul>
-                <li><a href="add-course.html">add course</a></li>
-                <li><a href="view-courses.html">view courses</a></li>
-              </ul>
-            </div>
-          </li>
-          
-           <li class="department">
-            <i class="fa-solid fa-book"></i>Departments<i
-              class="fa fa-caret-down"
-            ></i>
-
-            <div class="dropdown content">
-              <ul>
-                <li><a href="add-department.html">add department</a></li>
-                <li><a href="view-departments.html">view departments</a></li>
-              </ul>
-            </div>
-          </li>
-
-          <li class="account">
-            <i class="fa-solid fa-user-pen"></i>Account<i
-              class="fa fa-caret-down"
-            ></i>
-
-            <div class="dropdown content">
-              <ul>
-                <li><a href="change-password.html">Change password</a></li>
-                <li><a href="login.html">Sign out</a></li>
-              </ul>
-            </div>
-          </li>
-        </ul>
-      </nav>
-    </header>
+    <div id="navbar-placeholder"></div>
     <h3>Edit Department</h3>
         <br>
         <form method="get">
@@ -172,6 +72,7 @@ li:hover > div{
             <button>Delete</button>
         </div>
     </form>
+    <script src="../js/nav-admin.js"></script>
     </body>
 
 </html>
