@@ -2,6 +2,7 @@
 	margin: 0;
 	padding: 0;
 	font-family: Arial, sans-serif;
+	font-size: 26px;
 }
 
 
@@ -12,7 +13,7 @@
 	margin: 0 0 40px 0;
 	display: flex;
 	justify-content: center;
-
+	font-size: 32px;
 }
 
 
@@ -23,7 +24,7 @@
 	height: fit-content;
 	width: 500px;
 	margin-left: 30%;
-	border-radius: 7px;
+	border-radius: 10px;
 }
 
 form {
@@ -43,18 +44,18 @@ form {
 
 input {
 	background-color: white;
-	padding: 5px;
+	padding: 10px;
 	font-size: 17px;
 	border-radius: 7px;
 	outline-color: #3aa8ef;
-	width: 300px;
+	width: 85%;
 }
 
 select {
 	background-color: white;
-	padding: 5px;
+	padding: 10px;
 	font-size: 17px;
-	border-radius: 7px;
+	border-radius: 8px;
 	outline-color: #3aa8ef;
 	min-width: 200px;
 }
@@ -74,11 +75,11 @@ button {
 	margin-right: 100px;
 	display: inline-block;
 	background-color: #3aa8ef;
-	border-radius: 4px;
+	border-radius: 8px;
 	color: white;
 	padding: 10px;
 	border: none;
-	font-size: 18px;
+	font-size: 26px;
 	cursor: pointer;
 }
 
