@@ -78,6 +78,8 @@ function prompt(ele, flag, code) {
 	button.style.cssText = `
 	padding: 12px;
     width: 12%;
+	margin-top: 0px !important;
+	margin-right: 0px  !important;
 	`
 }
 
@@ -192,7 +194,7 @@ if (addForm)
 
 
 // for editing form
-let editForm = document.querySelector('form.edit-dept');
+let editForm = document.querySelector('form.edit-crs');
 if (editForm)
 	editForm.addEventListener('submit', (event) => {
 
@@ -202,18 +204,27 @@ if (editForm)
 			prompt("Course", 2)
 		} else {
 			const code = document.getElementById("code").value;
-			let Departments = localStorage.getItem('Course');
+			let Courses = localStorage.getItem('Courses');
 
 
 
-			Departments = JSON.parse(Departments);
+			Courses = JSON.parse(Courses);
 
-			if (code in Departments) {
+			if (code in Courses) {
 
 				const name = document.getElementById("name").value;
-				Departments[code]["Name"] = name;
+				const dept = document.getElementById("dept_related").value;
+				const credit = document.getElementById("credit").value;
+				const level = document.getElementById("available_at").value;
 
-				window.localStorage.setItem("Departments", JSON.stringify(Departments));
+				Courses[code] = {
+					"Name": name,
+					"Dept": dept,
+					"Credit": credit,
+					"Level": level
+				}
+
+				window.localStorage.setItem("Courses", JSON.stringify(Courses));
 
 				prompt("Course", 4, code)
 				return;

@@ -78,6 +78,8 @@ function prompt(ele, flag, code) {
 	button.style.cssText = `
 	padding: 12px;
     width: 12%;
+	margin-top: 0px !important;
+	margin-right: 0px  !important;
 	`
 }
 
