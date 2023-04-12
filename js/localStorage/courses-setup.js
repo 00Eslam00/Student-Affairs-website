@@ -124,6 +124,19 @@ if (deptRelate) {
 	}
 }
 
+let preCourses = document.getElementById("avl-courses");
+console.log(preCourses);
+if (preCourses) {
+	let Courses = JSON.parse(window.localStorage.getItem("Courses"));
+
+	for (let course in Courses) {
+		let opt = document.createElement("option");
+		opt.setAttribute("value", course);
+		opt.appendChild(document.createTextNode(Courses[course]["Name"]));
+		preCourses.appendChild(opt);
+	}
+}
+
 
 
 document.addEventListener('click', function (e) {
@@ -143,7 +156,7 @@ document.addEventListener('click', function (e) {
 
 // for adding form
 let addForm = document.querySelector('form.add-crs');
-console.log(addForm);
+// console.log(addForm);
 if (addForm)
 	addForm.addEventListener('submit', (event) => {
 
@@ -177,7 +190,8 @@ if (addForm)
 				"Name": name,
 				"Dept": dept,
 				"Credit": credit,
-				"Level": level
+				"Level": level,
+				"pre-courses": []
 			}
 
 			window.localStorage.setItem("Courses", JSON.stringify(Courses));

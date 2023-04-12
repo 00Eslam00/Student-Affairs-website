@@ -30,6 +30,7 @@ main {
 	margin: 0 auto;
 	background-color: #fafafa;
 	border-radius: 10px;
+	margin-bottom: 100px;
 
 }
 
@@ -48,6 +49,7 @@ form {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	margin-bottom: 50px;
 }
 
 .input label {
