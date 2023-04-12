@@ -110,6 +110,20 @@ if (!window.localStorage.getItem("Departments")) {
 
 
 
+let deptRelate = document.getElementById("dept_related");
+if (deptRelate) {
+	let depts = JSON.parse(window.localStorage.getItem("Departments"));
+
+	for (let dept in depts) {
+		let opt = document.createElement("option");
+		opt.setAttribute("value", dept);
+		opt.appendChild(document.createTextNode(depts[dept]["Name"]));
+		deptRelate.appendChild(opt);
+	}
+}
+
+
+
 document.addEventListener('click', function (e) {
 	if (e.target.tagName != 'BUTTON' || e.target.classList.contains('d-btn')) {
 
@@ -126,41 +140,51 @@ document.addEventListener('click', function (e) {
 
 
 // for adding form
-let addForm = document.querySelector('form.add-dep');
+let addForm = document.querySelector('form.add-crs');
+console.log(addForm);
 if (addForm)
 	addForm.addEventListener('submit', (event) => {
 
 		event.preventDefault();
 
 		if (!validateForm()) {
-			prompt("Department", 2)
+			prompt("Course", 2)
 		} else {
 			const code = document.getElementById("code").value;
-			let Departments = localStorage.getItem('Departments');
+			let Courses = localStorage.getItem('Courses');
 
-			if (!Departments) {
-				Departments = {};
+			if (!Courses) {
+				Courses = {};
 			} else {
 
-				Departments = JSON.parse(Departments);
+				Courses = JSON.parse(Courses);
 
-				if (code in Departments) {
-					prompt("Department", 3, code)
+				if (code in Courses) {
+					prompt("Course", 3, code)
 					return;
 				}
 
 			}
 
 			const name = document.getElementById("name").value;
-			Departments[code] = {
+			const dept = document.getElementById("dept_related").value;
+			const credit = document.getElementById("credit").value;
+			const level = document.getElementById("available_at").value;
+
+			Courses[code] = {
 				"Name": name,
-				"courses": []
+				"Dept": dept,
+				"Credit": credit,
+				"Level": level
 			}
 
+			window.localStorage.setItem("Courses", JSON.stringify(Courses));
+
+			let Departments = JSON.parse(window.localStorage.getItem("Departments"));
+
+			Departments[dept]["courses"].push(code);
 			window.localStorage.setItem("Departments", JSON.stringify(Departments));
-
-
-			prompt("Department", 1, code)
+			prompt("Course", 1, code)
 		}
 	});
 
@@ -175,10 +199,10 @@ if (editForm)
 		event.preventDefault();
 
 		if (!validateForm()) {
-			prompt("Department", 2)
+			prompt("Course", 2)
 		} else {
 			const code = document.getElementById("code").value;
-			let Departments = localStorage.getItem('Departments');
+			let Departments = localStorage.getItem('Course');
 
 
 
@@ -191,12 +215,12 @@ if (editForm)
 
 				window.localStorage.setItem("Departments", JSON.stringify(Departments));
 
-				prompt("Department", 4, code)
+				prompt("Course", 4, code)
 				return;
 
 			}
 
-			prompt("Department", 5, code)
+			prompt("Course", 5, code)
 			return;
 
 		}

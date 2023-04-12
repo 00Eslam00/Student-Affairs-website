@@ -25,36 +25,37 @@
 	<div id="navbar-placeholder"></div>
 	<h1>Add Course info</h1>
 	<main>
-		<form>
-			<div class="input">
-				<label for="c_name">Course Name</label>
-				<input placeholder="Enter Name" type="text" name="course_name" id="c_name" required>
-			</div>
+		<form class="add-crs">
 
 			<div class="input">
 				<label for="c_code">Course Code</label>
-				<input type="text" placeholder="Enter Code" name="course_code" id="c_code" required maxlength="6">
+				<input type="text" placeholder="Enter Code" name="course_code" id="code" maxlength="6">
+			</div>
+
+			<div class="input">
+				<label for="name">Course Name</label>
+				<input placeholder="Enter Name" type="text" name="course_name" id="name">
 			</div>
 
 			<div class="input">
 				<label for="dept_related">Department Related</label>
-				<select name="dept_related" id="dept_related" required>
-					<option value="IS">Information System</option>
+				<select name="dept_related" id="dept_related">
+					<!-- <option value="IS">Information System</option>
 					<option value="IT">Information Tecnology</option>
 					<option value="CS">Computer Science</option>
 					<option value="AI">Artificial Intelligence</option>
-					<option value="DS">Decision Support</option>
+					<option value="DS">Decision Support</option> -->
 				</select>
 			</div>
 
 			<div class="input">
-				<label for="c_credit">Course Credit</label>
-				<input type="number" name="course_credit" id="c_credit" placeholder="0-3" min="0" max="3" required>
+				<label for="credit">Course Credit</label>
+				<input type="number" name="course_credit" id="credit" placeholder="0-3" min="0" max="3">
 			</div>
 
 			<div class="input">
 				<label for="available_at">Available at level </label>
-				<select name="available_at" id="available_at" required>
+				<select name="available_at" id="available_at">
 					<option value="1">1</option>
 					<option value="2">2</option>
 					<option value="3">3</option>
@@ -63,15 +64,15 @@
 			</div>
 
 			<div class="buttons">
-				<button id="sub" onclick="prompt('Course')" type="button" value="add">Submit</button>
-
+				<button id="sub" type="submit">Submit</button>
 				<button type="reset">Reset</button>
 			</div>
 
 
 		</form>
 	</main>
-	<script src="../js/admin-add.js"></script>
+	<script src="../js/localStorage/courses-setup.js"></script>
+	<!-- <script src="../js/admin-add.js"></script> -->
 	<script src="../js/nav-admin.js"></script>
 </body>
 
