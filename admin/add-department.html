@@ -24,24 +24,29 @@
 	<div id="navbar-placeholder"></div>
 	<h1>Add Department</h1><br />
 	<main>
-		<form method="get">
-			<div class="name">
-				<label for="dept_name">Department Name</label>
-				<input type="text" name="dept_name" id="dept_name" placeholder="Enter Name" required>
-			</div>
+		<form method="get" class="add-dep">
+
 			<div class="code">
-				<label for="dept_app">Department Code</label>
-				<input type="text" name="dept_code" id="dept_code" placeholder="Enter Code" maxlength="6">
+				<label for="code">Department Code</label>
+				<input type="text" name="dept_code" id="code" placeholder="Enter Code" maxlength="6">
 			</div>
+
+			<div class="name">
+				<label for="name">Department Name</label>
+				<input type="text" name="dept_name" id="name" placeholder="Enter Name">
+			</div>
+
 			<div class="buttons">
-				<button onclick="prompt('Department')" type="button" value="add">Submit</button>
+				<button id="submit" type="submit" value="add">Submit</button>
 				<button type="reset">Reset</button>
 			</div>
 
 		</form>
 	</main>
-	<script src="../js/admin-add.js"></script>
 	<script src="../js/nav-admin.js"></script>
+	<script src="../js/localStorage/departments-setup.js"></script>
+	<!-- <script src="../js/admin-add.js"></script> -->
+
 </body>
 
 </html>
