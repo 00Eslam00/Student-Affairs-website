@@ -37,7 +37,7 @@ function prompt(ele, flag, code) {
 
 	else if (flag == 4) {
 		paragraph.textContent = `a ${ele} with code ${code} has been updated succesfully`;
-		color = "orange"
+		color = "green"
 	}
 
 	else if (flag == 5) {
@@ -108,71 +108,87 @@ document.addEventListener('click', function (e) {
 	}
 });
 
-document.querySelector('form.add-dep').addEventListener('submit', (event) => {
 
-	event.preventDefault();
 
-	if (!validateForm()) {
-		prompt("Department", 2)
-	} else {
-		const code = document.getElementById("code").value;
-		let Departments = localStorage.getItem('Departments');
+// for adding form
+let addForm = document.querySelector('form.add-dep');
+if (addForm)
+	addForm.addEventListener('submit', (event) => {
 
-		if (!Departments) {
-			Departments = {};
+		event.preventDefault();
+
+		if (!validateForm()) {
+			prompt("Department", 2)
 		} else {
+			const code = document.getElementById("code").value;
+			let Departments = localStorage.getItem('Departments');
+
+			if (!Departments) {
+				Departments = {};
+			} else {
+
+				Departments = JSON.parse(Departments);
+
+				if (code in Departments) {
+					prompt("Department", 3, code)
+					return;
+				}
+
+			}
+
+			const name = document.getElementById("name").value;
+			Departments[code] = {
+				"Name": name,
+				"courses": []
+			}
+
+			window.localStorage.setItem("Departments", JSON.stringify(Departments));
+
+
+			prompt("Department", 1, code)
+		}
+	});
+
+
+
+
+// for editing form
+let editForm = document.querySelector('form.edit-dept');
+if (editForm)
+	editForm.addEventListener('submit', (event) => {
+
+		event.preventDefault();
+
+		if (!validateForm()) {
+			prompt("Department", 2)
+		} else {
+			const code = document.getElementById("code").value;
+			let Departments = localStorage.getItem('Departments');
+
+
 
 			Departments = JSON.parse(Departments);
 
 			if (code in Departments) {
-				prompt("Department", 3, code)
+
+				const name = document.getElementById("name").value;
+				Departments[code]["Name"] = name;
+
+				window.localStorage.setItem("Departments", JSON.stringify(Departments));
+
+				prompt("Department", 4, code)
 				return;
+
 			}
 
-		}
-
-		const name = document.getElementById("name").value;
-		Departments[code] = {
-			"Name": name,
-			"courses": []
-		}
-
-		window.localStorage.setItem("Departments", JSON.stringify(Departments));
-
-
-		prompt("Department", 1, code)
-	}
-});
-
-
-document.querySelector('form.edit-dept').addEventListener('submit', (event) => {
-
-	event.preventDefault();
-
-	if (!validateForm()) {
-		prompt("Department", 2)
-	} else {
-		const code = document.getElementById("code").value;
-		let Departments = localStorage.getItem('Departments');
-
-
-
-		Departments = JSON.parse(Departments);
-
-		if (code in Departments) {
-
-			const name = document.getElementById("name").value;
-			Departments[code]["Name"] = name;
-
-			window.localStorage.setItem("Departments", JSON.stringify(Departments));
-
-			prompt("Department", 4, code)
+			prompt("Department", 5, code)
 			return;
 
 		}
-		
-		prompt("Department", 5, code)
-		return;
+	});
 
-	}
-});
+
+
+
+//for view table
+
