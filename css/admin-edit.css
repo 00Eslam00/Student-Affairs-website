@@ -42,6 +42,10 @@ form {
 	justify-content: space-evenly;
 }
 
+.input label {
+	padding-bottom: 5px;
+}
+
 input {
 	background-color: white;
 	padding: 10px;
@@ -57,7 +61,7 @@ select {
 	font-size: 17px;
 	border-radius: 8px;
 	outline-color: #3aa8ef;
-	min-width: 200px;
+	width: 85%;
 }
 
 
