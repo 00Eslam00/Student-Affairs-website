@@ -298,7 +298,7 @@ if (editForm)
 //for view table
 let viewTable = document.querySelector("table.crs-table");
 if (viewTable) {
-	let courses = JSON.parse(window.localStorage.getItem("Departments"));
+	let courses = JSON.parse(window.localStorage.getItem("Courses"));
 	let tbody = document.querySelector("table.crs-table tbody");
 
 	// <th>Course-ID</th>
@@ -327,6 +327,7 @@ if (viewTable) {
 		crsDept.appendChild(document.createTextNode(`${courses[key]['Dept']}`));
 		crsPre.appendChild(document.createTextNode(`${courses[key]['Pre-courses'].join(", ")}`));
 
+		console.log(crsCode, crsName, crsCredit, crsLevel, crsDept)
 		row.appendChild(crsCode);
 		row.appendChild(crsName);
 		row.appendChild(crsCredit);
