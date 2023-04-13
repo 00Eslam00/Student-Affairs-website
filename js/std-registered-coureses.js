@@ -94,39 +94,32 @@ const termSelect = document.getElementById("t");
 
 // Get the table rows
 const rows = document.querySelectorAll("#myTable tbody tr");
-console.log(rows);
 // Add event listeners to the select elements
 yearSelect.addEventListener("change", filterRows);
 levelSelect.addEventListener("change", filterRows);
 termSelect.addEventListener("change", filterRows);
 
+// This function filters table rows based on user-selected values for year, level, and term
+
 function filterRows() {
-    // Get the selected values
+    // Get the selected values from the select dropdowns
     const yearValue = yearSelect.options[yearSelect.selectedIndex].text;
     const levelValue = levelSelect.options[levelSelect.selectedIndex].text;
     const termValue = termSelect.options[termSelect.selectedIndex].text;
-    // const levelValue = levelSelect.value;
-    // const termValue = termSelect.value;
-    // const selectedOption = selectElement.options[selectElement.selectedIndex];
-    // const selectedText = selectedOption.text;
-    console.log(yearValue);
-    console.log(levelValue);
-    console.log(termValue);
+
     // Filter the table rows
     rows.forEach(row => {
+        // Get the year, level, and term values for each row
         const year = row.querySelector(".year").textContent;
-        console.log(year);
         const level = row.querySelector(".level").textContent;
-        console.log(level);
         const term = row.querySelector(".term").textContent;
-        console.log(term);
 
-        const yearMatch =  yearValue === year;
-        console.log(yearMatch);
+        // Check if the selected value matches the row value for year, level, and term
+        const yearMatch = yearValue === year;
         const levelMatch = levelValue === level;
-        console.log(levelMatch);
         const termMatch = termValue === term;
-        console.log(termMatch);
+
+        // Show or hide the row based on whether all three conditions match or not
         if ((yearMatch || yearValue === "All") && (levelMatch || levelValue === "All") && (termMatch || termValue === "All")) {
             row.style.display = "";
         } else {
