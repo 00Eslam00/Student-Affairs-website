@@ -11,9 +11,10 @@
     align-items: center;
 }
 
-select::-webkit-scrollbar {
+/* select::-webkit-scrollbar {
     display: none;
-}
+    background-color: red;
+} */
 
 form {
     margin-top: 50px;
@@ -44,6 +45,9 @@ select option {
     margin-bottom: 5px;
     padding: 5px;
     cursor: pointer;
+    /* text-overflow: ellipsis; */
+    white-space: pre-line;
+    border-bottom: 1px solid rgba(0, 0, 0, .125);
 }
 
 select option:checked {
@@ -133,7 +137,8 @@ input:hover {
     padding: 5px;
 }
 
-.l1 label, .l2 label {
+.l1 label,
+.l2 label {
     font-size: x-large;
 }
 

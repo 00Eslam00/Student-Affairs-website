@@ -38,6 +38,11 @@ table th {
     padding: 10px;
 }
 
+table .code {
+    font-weight: bold;
+    font-size: 80%;
+}
+
 .box-courses .box-header {
     padding: 20px;
     margin-bottom: 0;

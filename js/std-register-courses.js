@@ -1,17 +1,19 @@
-// Move selected elements to right (Selected coureses)
 var selectedOptions1 = new Array();
+// Move selected elements to right (Selected coureses)
 const button1 = document.getElementById("go_right");
 button1.addEventListener("click", function (event) {
     event.preventDefault();
-    const select1 = document.getElementById("ecourses");
     const select2 = document.getElementById("rcourses");
     console.log("before submint: ");
     console.log(selectedOptions1);
-    var len = selectedOptions1.length;
-    for (var i = 0; i < len; i++) {
+    while (selectedOptions1.length !== 0) {
         select2.appendChild(selectedOptions1[0]);
         selectedOptions1[0].classList.remove("selected");
         selectedOptions1.splice(0, 1);
+    }
+    while (selectedOptions2.length !== 0) {
+        selectedOptions2[0].classList.remove("selected");
+        selectedOptions2.splice(0, 1);
     }
     console.log("after submint: ");
     console.log(selectedOptions1);
@@ -44,14 +46,16 @@ const button2 = document.getElementById("go_left");
 button2.addEventListener("click", function (event) {
     event.preventDefault();
     const select2 = document.getElementById("ecourses");
-    const select1 = document.getElementById("rcourses");
     console.log("before submint: ");
     console.log(selectedOptions2);
-    var len = selectedOptions2.length;
-    for (var i = 0; i < len; i++) {
+    while (selectedOptions2.length !== 0) {
         select2.appendChild(selectedOptions2[0]);
         selectedOptions2[0].classList.remove("selected");
         selectedOptions2.splice(0, 1);
+    }
+    while (selectedOptions1.length !== 0) {
+        selectedOptions1[0].classList.remove("selected");
+        selectedOptions1.splice(0, 1);
     }
     console.log("after submint: ");
     console.log(selectedOptions2);
@@ -83,6 +87,14 @@ const button3 = document.getElementById("reset");
 button3.addEventListener("click", function () {
     const select2 = document.getElementById("ecourses");
     const select1 = document.getElementById("rcourses");
+    while (selectedOptions1.length !== 0){
+        selectedOptions1[0].classList.remove("selected");
+        selectedOptions1.splice(0, 1);
+    }
+    while (selectedOptions2.length !== 0){
+        selectedOptions2[0].classList.remove("selected");
+        selectedOptions2.splice(0, 1);
+    }
     while (select1.firstChild) {
         select2.appendChild(select1.firstChild);
     }
