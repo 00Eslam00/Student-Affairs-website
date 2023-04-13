@@ -98,16 +98,16 @@ function validateForm() {
 
 
 if (!window.localStorage.getItem("Students")) {
-	window.localStorage.setItem("Students", "");
+	window.localStorage.setItem("Students", "{}");
 }
 
 if (!window.localStorage.getItem("Courses")) {
-	window.localStorage.setItem("Courses", "");
+	window.localStorage.setItem("Courses", "{}");
 }
 
 
 if (!window.localStorage.getItem("Departments")) {
-	window.localStorage.setItem("Departments", "");
+	window.localStorage.setItem("Departments", "{}");
 }
 
 
@@ -123,19 +123,21 @@ if (deptRelate) {
 		deptRelate.appendChild(opt);
 	}
 }
+// console.log(deptRelate.childNodes.length);
+// console.log(deptRelate);
 
-let preCourses = document.getElementById("avl-courses");
-console.log(preCourses);
-if (preCourses) {
+let avlCoursesAdd = document.getElementById("avl-courses");
+if (avlCoursesAdd) {
 	let Courses = JSON.parse(window.localStorage.getItem("Courses"));
 
 	for (let course in Courses) {
 		let opt = document.createElement("option");
 		opt.setAttribute("value", course);
 		opt.appendChild(document.createTextNode(Courses[course]["Name"]));
-		preCourses.appendChild(opt);
+		avlCoursesAdd.appendChild(opt);
 	}
 }
+
 
 
 
@@ -162,6 +164,12 @@ if (addForm)
 
 		event.preventDefault();
 
+		if (!document.querySelectorAll("#dept_related options")) {
+			prompt("Course", 2);
+			return;
+		}
+
+
 		if (!validateForm()) {
 			prompt("Course", 2)
 		} else {
@@ -183,23 +191,34 @@ if (addForm)
 
 			const name = document.getElementById("name").value;
 			const dept = document.getElementById("dept_related").value;
+
+			if (!Boolean(dept)) {
+				prompt("Course", 2);
+				return;
+			}
 			const credit = document.getElementById("credit").value;
 			const level = document.getElementById("available_at").value;
+			const preCoursesOp = document.querySelectorAll("#pre-courses option:not(:is([value='0']");
+
+
+			let preCourses = Array.from(preCoursesOp).map((item) => {
+				return item.value;
+			});
 
 			Courses[code] = {
 				"Name": name,
 				"Dept": dept,
 				"Credit": credit,
 				"Level": level,
-				"pre-courses": []
+				"Pre-courses": preCourses
 			}
 
-			window.localStorage.setItem("Courses", JSON.stringify(Courses));
 
 			let Departments = JSON.parse(window.localStorage.getItem("Departments"));
 
 			Departments[dept]["courses"].push(code);
 			window.localStorage.setItem("Departments", JSON.stringify(Departments));
+			window.localStorage.setItem("Courses", JSON.stringify(Courses));
 			prompt("Course", 1, code)
 		}
 	});
@@ -219,25 +238,47 @@ if (editForm)
 		} else {
 			const code = document.getElementById("code").value;
 			let Courses = localStorage.getItem('Courses');
-
+			let Departments = JSON.parse(window.localStorage.getItem("Departments"));
 
 
 			Courses = JSON.parse(Courses);
 
 			if (code in Courses) {
 
+
+				//old data
+				const oldname = Courses["Name"];
+				const olddept = Courses["Dept"]
+				const oldcredit = Courses["Credit"]
+				const oldlevel = Courses["Level"]
+				const oldpreCourses = Courses["Pre-courses"];
+
+				// new data
 				const name = document.getElementById("name").value;
 				const dept = document.getElementById("dept_related").value;
 				const credit = document.getElementById("credit").value;
 				const level = document.getElementById("available_at").value;
+				const preCoursesOp = document.querySelectorAll("#pre-courses option:not(:is([value='0']");
+				let preCourses = Array.from(preCoursesOp).map((item) => {
+					return item.value;
+				});
+
+
+				if (olddept !== dept)
+					Departments[olddept]["courses"].remove(code)
 
 				Courses[code] = {
 					"Name": name,
 					"Dept": dept,
 					"Credit": credit,
-					"Level": level
+					"Level": level,
+					"Pre-courses": preCourses
 				}
 
+
+
+				Departments[dept]["courses"].push(code);
+				window.localStorage.setItem("Departments", JSON.stringify(Departments));
 				window.localStorage.setItem("Courses", JSON.stringify(Courses));
 
 				prompt("Course", 4, code)
@@ -255,23 +296,69 @@ if (editForm)
 
 
 //for view table
-let viewTable = document.querySelector("table.dept-table");
+let viewTable = document.querySelector("table.crs-table");
 if (viewTable) {
-	let depts = JSON.parse(window.localStorage.getItem("Departments"));
-	let tbody = document.querySelector("table.dept-table tbody");
-	for (let key in depts) {
-		console.log(depts[key]);
-		let row = document.createElement("tr");
-		let deptCode = document.createElement("td");
-		let deptname = document.createElement("td");
-		let deptcrs = document.createElement("td");
+	let courses = JSON.parse(window.localStorage.getItem("Departments"));
+	let tbody = document.querySelector("table.crs-table tbody");
 
-		deptCode.appendChild(document.createTextNode(`${key}`));
-		deptname.appendChild(document.createTextNode(`${depts[key]['Name']}`));
-		deptcrs.appendChild(document.createTextNode(`${depts[key]['courses'].join(", ")}`));
-		row.appendChild(deptCode);
-		row.appendChild(deptname);
-		row.appendChild(deptcrs);
+	// <th>Course-ID</th>
+	// <th>course-Name</th>
+	// <th>Course-Credit</th>
+	// <th>Course-Level</th>
+	// <th>Department</th>
+	// <th>Pre-Courses</th>
+
+
+
+	for (let key in courses) {
+		console.log(courses[key]);
+		let row = document.createElement("tr");
+		let crsCode = document.createElement("td");
+		let crsName = document.createElement("td");
+		let crsCredit = document.createElement("td");
+		let crsLevel = document.createElement("td");
+		let crsDept = document.createElement("td");
+		let crsPre = document.createElement("td");
+
+		crsCode.appendChild(document.createTextNode(`${key}`));
+		crsName.appendChild(document.createTextNode(`${courses[key]['Name']}`));
+		crsCredit.appendChild(document.createTextNode(`${courses[key]['Credit']}`));
+		crsLevel.appendChild(document.createTextNode(`${courses[key]['Level']}`));
+		crsDept.appendChild(document.createTextNode(`${courses[key]['Dept']}`));
+		crsPre.appendChild(document.createTextNode(`${courses[key]['Pre-courses'].join(", ")}`));
+
+		row.appendChild(crsCode);
+		row.appendChild(crsName);
+		row.appendChild(crsCredit);
+		row.appendChild(crsLevel);
+		row.appendChild(crsDept);
+		row.appendChild(crsPre);
 		tbody.appendChild(row);
 	}
 }
+
+
+let avlCourses = document.querySelector(".add-crs #avl-courses");
+avlCourses.addEventListener("change", () => {
+	if (avlCourses.value != 0) {
+		let val = avlCourses.value;
+		let opt = document.querySelector(`#avl-courses option[value='${val}']`);
+		document.querySelector(`#avl-courses option[value='${val}']`).remove();
+		document.querySelector("#pre-courses").appendChild(opt);
+		document.querySelector(`#pre-courses option[value='${0}']`).selected = true;
+
+	}
+});
+
+
+let preCourses = document.querySelector(".add-crs #pre-courses");
+preCourses.addEventListener("change", () => {
+	console.log(preCourses.value);
+	if (preCourses.value != 0) {
+		let val = preCourses.value;
+		let opt = document.querySelector(`#pre-courses option[value='${val}']`)
+		document.querySelector(`#pre-courses option[value='${val}']`).remove();
+		document.querySelector("#avl-courses").appendChild(opt);
+		document.querySelector(`#avl-courses option[value='${0}']`).selected = true;
+	}
+});
