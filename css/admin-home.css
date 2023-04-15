@@ -1,0 +1,115 @@
+* {
+	padding: 0px;
+	margin: 0px;
+}
+
+.post-cont {
+	display: flex;
+	flex-direction: column;
+	width: 70%;
+	margin: 50px auto;
+}
+
+.post-cont input {
+	outline-color: #3aa8ef;
+	width: 70%;
+	height: 10px;
+	padding: 15px;
+	font-size: 26px;
+	border-bottom: none;
+
+}
+
+.post {
+	background-color: #3aa7ef3a;
+	font-size: 25px;
+	outline: 2px solid #3aa7ef83;
+	width: 80%;
+	position: relative;
+	padding: 20px;
+	margin: 50px auto;
+	color: #111;
+}
+
+.post-title {
+	font-size: 40px;
+	font-weight: 900;
+	color: #003d75;
+	margin-bottom: 20px;
+}
+
+/* .post:hover {
+
+	background-color: #3aa7ef3a;
+	outline: 2px solid #3aa8ef;
+} */
+
+
+/*
+.title {
+	display: inline;
+	position: absolute;
+	top: 30px;
+	left: 30px;
+	font-size: 40px;
+	font-weight: 900;
+	color: #fff;
+} */
+
+.posts-title {
+	font-size: 35px;
+	outline: 2px solid #3aa7ef83;
+	color: white;
+	background-color: #3aa7efaf;
+	width: 60%;
+	margin: 30px auto;
+	text-align: center;
+}
+
+.text {
+	font-size: 20px;
+	padding: 10px;
+	outline-color: #3aa7efaf;
+}
+
+.post span {
+	content: "";
+	background-image: url("../images/my-icon.svg");
+	background-repeat: no-repeat;
+	background-size: 16px 16px;
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	top: 8px;
+	right: 5px;
+	cursor: pointer;
+}
+
+.menu {
+	position: absolute;
+	width: 150px;
+	height: 300px;
+	top: 24px;
+	left: 0;
+	display: none;
+}
+
+.menu ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	direction: ltr;
+	background-color: #f9f9f9;
+	border: 1px solid #ccc;
+}
+
+.menu li {
+	padding: 10px;
+	cursor: pointer;
+}
+
+.menu li:hover {
+	padding-right: 6px;
+	font-weight: bold;
+}

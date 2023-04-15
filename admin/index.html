@@ -1,14 +1,11 @@
-<html>
+<!DOCTYPE html>
 
 <head>
-	<script src="https://kit.fontawesome.com/20d7ce3dd9.js" crossorigin="anonymous"></script>
-
-	<title>Admin Home</title>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<link href="css/style.css" rel="stylesheet" />
+	<link rel="stylesheet" href="../css/all.min.css">
+	<link rel="stylesheet" href="../css/admin-home.css">
 	<link rel="stylesheet" href="../css/navbar.css">
 	<link rel="stylesheet" href="../css/navbar-admin.css">
+
 	<style>
 		nav #home,
 		nav #home i {
@@ -18,16 +15,51 @@
 		}
 
 	</style>
+
 </head>
 
 <body>
+
 	<div id="navbar-placeholder"></div>
 
-	<center>
-		<h1>Welcome To Admin Panel</h1>
-	</center>
-	<script src="../js/localStorage/setup-storage.js"></script>
+	<div class="post-cont">
+		<input type="text" name="" id="" placeholder="Write the heading ...">
+		<textarea id="my-textarea" class="text" name="message" rows="10" cols="100" placeholder="Write a post ..."
+			style="resize: none;"></textarea>
+	</div>
+
+
+	<div class="news">
+		<p class="posts-title">Posts</p>
+
+		<div class="post">
+			<p class="post-title">
+				The Importance of Active Learning in Higher Education
+			</p>
+			<p class="post-content">
+				Active learning is a teaching approach that engages students in the learning process by encouraging
+				them to participate, collaborate, and think critically. In higher education, it is becoming
+				increasingly important to incorporate active learning strategies into the classroom to enhance
+				students' academic performance and prepare them for future careers. Active learning methods include
+				group discussions, peer teaching, problem-solving activities, and hands-on experiences. These
+				strategies not only increase students' motivation and engagement but also promote the development of
+				key skills such as communication, teamwork, and critical thinking. Therefore, faculty members should
+				embrace active learning as a vital tool to help students succeed in their academic and professional
+				lives.
+			</p>
+		</div>
+
+
+		<!-- <span class="post-icon"></span>
+		<div class="menu">
+			<ul>
+				<li>Edit</li>
+				<li>Delete</li>
+			</ul>
+		</div> -->
+
+
+	</div>
+	<script src="../js/admin-home.js"></script>
 	<script src="../js/nav-admin.js"></script>
 </body>
-
-</html>
