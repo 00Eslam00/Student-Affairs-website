@@ -320,38 +320,38 @@ if (viewTable) {
 		let row = document.createElement("tr");
 
 		let stdID = document.createElement("td");
-		stdID.classList.add("stdID");
+		stdID.setAttribute("value", "stdID");
 
 		let stdName = document.createElement("td");
-		stdName.classList.add("stdName");
+		stdName.setAttribute("value", "stdName");
 
 		let stdPass = document.createElement("td");
-		stdPass.classList.add("stdPass");
+		stdPass.setAttribute("value", "stdPass");
 
 		let stdBD = document.createElement("td");
-		stdBD.classList.add("stdBD");
+		stdBD.setAttribute("value", "stdBD");
 
 		let stdGPA = document.createElement("td");
-		stdGPA.classList.add("stdGPA");
+		stdGPA.setAttribute("value", "stdGPA");
 
 		let stdGender = document.createElement("td");
-		stdGender.classList.add("stdGender");
+		stdGender.setAttribute("value", "stdGender");
 
 		let stdLevel = document.createElement("td");
-		stdLevel.classList.add("stdLevel");
+		stdLevel.setAttribute("value", "stdLevel");
 
 		let stdDept = document.createElement("td");
-		stdDept.classList.add("stdDept");
+		stdDept.setAttribute("value", "stdDept");
 
 		let stdEmail = document.createElement("td");
-		stdEmail.classList.add("stdEmail");
+		stdEmail.setAttribute("value", "stdEmail");
 
 		let stdMobile = document.createElement("td");
-		stdMobile.classList.add("stdMobile");
+		stdMobile.setAttribute("value", "stdMobile");
 
 		let stdstat = document.createElement("td");
 		let selectStat = document.createElement("select");
-		selectStat.classList.add("stdstat");
+		// selectStat.classList.add("stdstat");
 		selectStat.classList.add("std-stat")
 
 		let active = document.createElement("option");
@@ -362,7 +362,7 @@ if (viewTable) {
 		inActive.appendChild(document.createTextNode("inactive"));
 
 		inActive.value = 0;
-		console.log(active.value, inActive.value);
+		// console.log(active.value, inActive.value);
 
 		selectStat.appendChild(active);
 		selectStat.appendChild(inActive);
@@ -382,16 +382,33 @@ if (viewTable) {
 
 
 		stdID.appendChild(document.createTextNode(`${key}`));
+
 		stdName.appendChild(document.createTextNode(`${Students[key]["Name"]}`));
-		stdPass.appendChild(document.createTextNode(`${Students[key]["Pass"]}`))
+
+		stdPass.appendChild(document.createTextNode(`${Students[key]["Pass"]}`));
+
 		stdBD.appendChild(document.createTextNode(`${Students[key]["Birth-date"]}`));
+
 		stdGPA.appendChild(document.createTextNode(`${2}`));
-		stdGender.appendChild(document.createTextNode(`${Students[key]["Gender"]}`));
+
+		let gender;
+		if (Students[key]["Gender"] == 1)
+			gender = "Male"
+		else
+			gender = "Female"
+		stdGender.appendChild(document.createTextNode(`${gender}`));
+
 		stdLevel.appendChild(document.createTextNode(`${Students[key]["Level"]}`));
-		stdDept.appendChild(document.createTextNode(`${Students[key]["Dept"]}`));
+
+
+		let dept = JSON.parse(localStorage.getItem("Departments"))[`${Students[key]["Dept"]}`]["Name"];
+		// console.log(dept)
+		stdDept.appendChild(document.createTextNode(`${dept}`));
+
 		stdEmail.appendChild(document.createTextNode(`${Students[key]["Email"]}`));
+
 		stdMobile.appendChild(document.createTextNode(`${Students[key]["Mobile"]}`));
-		//stdstat.appendChild(document.createTextNode(`${Students["Gender"]}`));
+
 		row.appendChild(stdID);
 		row.appendChild(stdName);
 		row.appendChild(stdPass);
@@ -407,4 +424,18 @@ if (viewTable) {
 		tbody.appendChild(row);
 
 	}
+}
+
+
+let avLevel = document.getElementById("level")
+if (avLevel) {
+	avLevel.addEventListener("change", () => {
+		if (Number(avLevel.value) < 3) {
+			let dept = document.getElementById("dept");
+			dept.setAttribute("disabled", "");
+			document.querySelector('#dept option[value="Gen"]').selected = true;
+		} else {
+			document.getElementById("dept").removeAttribute("disabled");
+		}
+	});
 }

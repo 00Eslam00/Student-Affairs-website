@@ -129,7 +129,7 @@ if (deptRelate) {
 // console.log(deptRelate.childNodes.length);
 // console.log(deptRelate);
 
-let avlCoursesAdd = document.getElementById("avl-courses");
+let avlCoursesAdd = document.querySelector(".add-crs #avl-courses");
 if (avlCoursesAdd) {
 	let Courses = JSON.parse(window.localStorage.getItem("Courses"));
 
@@ -200,7 +200,7 @@ if (addForm)
 				return;
 			}
 			const credit = document.getElementById("credit").value;
-			const level = document.getElementById("available_at").value;
+			const level = document.getElementById("level").value;
 			const preCoursesOp = document.querySelectorAll("#pre-courses option:not(:is([value='0']");
 
 
@@ -250,25 +250,29 @@ if (editForm)
 
 
 				//old data
-				const oldname = Courses["Name"];
-				const olddept = Courses["Dept"]
-				const oldcredit = Courses["Credit"]
-				const oldlevel = Courses["Level"]
+				// const oldname = Courses["Name"];
+				const olddept = Courses[code]["Dept"];
+				// const oldcredit = Courses["Credit"];
+				const oldlevel = Courses["Level"];
 				const oldpreCourses = Courses["Pre-courses"];
 
 				// new data
 				const name = document.getElementById("name").value;
 				const dept = document.getElementById("dept_related").value;
 				const credit = document.getElementById("credit").value;
-				const level = document.getElementById("available_at").value;
+				const level = document.getElementById("level").value;
 				const preCoursesOp = document.querySelectorAll("#pre-courses option:not(:is([value='0']");
 				let preCourses = Array.from(preCoursesOp).map((item) => {
 					return item.value;
 				});
 
 
-				if (olddept !== dept)
-					Departments[olddept]["courses"].remove(code)
+				// console.log(olddept, dept);
+				if (olddept !== dept) {
+					const index = Departments[olddept]["courses"].indexOf(code);
+					Departments[olddept]["courses"].splice(index, 1);
+				}
+
 
 				Courses[code] = {
 					"Name": name,
@@ -342,27 +346,43 @@ if (viewTable) {
 }
 
 
-let avlCourses = document.querySelector(".add-crs #avl-courses");
-avlCourses.addEventListener("change", () => {
-	if (avlCourses.value != 0) {
-		let val = avlCourses.value;
-		let opt = document.querySelector(`#avl-courses option[value='${val}']`);
-		document.querySelector(`#avl-courses option[value='${val}']`).remove();
-		document.querySelector("#pre-courses").appendChild(opt);
-		document.querySelector(`#pre-courses option[value='${0}']`).selected = true;
+let avlCourses = document.querySelector("#avl-courses");
+if (avlCourses)
+	avlCourses.addEventListener("change", () => {
+		if (avlCourses.value != 0) {
+			let val = avlCourses.value;
+			let opt = document.querySelector(`#avl-courses option[value='${val}']`);
+			document.querySelector(`#avl-courses option[value='${val}']`).remove();
+			document.querySelector("#pre-courses").appendChild(opt);
+			document.querySelector(`#pre-courses option[value='${0}']`).selected = true;
 
-	}
-});
+		}
+	});
 
 
-let preCourses = document.querySelector(".add-crs #pre-courses");
-preCourses.addEventListener("change", () => {
-	console.log(preCourses.value);
-	if (preCourses.value != 0) {
-		let val = preCourses.value;
-		let opt = document.querySelector(`#pre-courses option[value='${val}']`)
-		document.querySelector(`#pre-courses option[value='${val}']`).remove();
-		document.querySelector("#avl-courses").appendChild(opt);
-		document.querySelector(`#avl-courses option[value='${0}']`).selected = true;
-	}
-});
+let preCourses = document.querySelector("#pre-courses");
+if (preCourses)
+	preCourses.addEventListener("change", () => {
+		console.log(preCourses.value);
+		if (preCourses.value != 0) {
+			let val = preCourses.value;
+			let opt = document.querySelector(`#pre-courses option[value='${val}']`)
+			document.querySelector(`#pre-courses option[value='${val}']`).remove();
+			document.querySelector("#avl-courses").appendChild(opt);
+			document.querySelector(`#avl-courses option[value='${0}']`).selected = true;
+		}
+	});
+
+
+let avLevel = document.getElementById("level")
+if (avLevel) {
+	avLevel.addEventListener("change", () => {
+		if (Number(avLevel.value) < 3) {
+			let dept = document.getElementById("dept_related");
+			dept.setAttribute("disabled", "");
+			document.querySelector('#dept_related option[value="Gen"]').selected = true;
+		} else {
+			document.getElementById("dept_related").removeAttribute("disabled");
+		}
+	});
+}

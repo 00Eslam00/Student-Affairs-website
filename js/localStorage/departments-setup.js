@@ -217,7 +217,7 @@ if (viewTable) {
 	let depts = JSON.parse(window.localStorage.getItem("Departments"));
 	let tbody = document.querySelector("table.dept-table tbody");
 	for (let key in depts) {
-		console.log(depts[key]);
+		// console.log(depts[key]);
 		let row = document.createElement("tr");
 		let deptCode = document.createElement("td");
 		let deptname = document.createElement("td");

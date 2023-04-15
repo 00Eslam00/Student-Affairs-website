@@ -8,6 +8,7 @@ function addFilter() {
 	}
 
 	let filter_value = document.querySelector(".filters").value;
+	let filterName = document.querySelector(`.filters option[value="${filter_value}"]`).textContent;
 	let filters = document.querySelectorAll('.filter-values div');
 
 	let filter_icon = document.createElement("i");
@@ -32,7 +33,7 @@ function addFilter() {
 		filter_element.setAttribute("filter-name", filter_value);
 		filter_element.setAttribute("filter-value", search_value);
 		filter_element.classList.add("filter-item");
-		filter_element.appendChild(document.createTextNode(`${filter_value} = "${search_value}"`))
+		filter_element.appendChild(document.createTextNode(`${filterName} = "${search_value}"`))
 		filter_element.appendChild(filter_icon);
 
 		document.querySelector(".filter-values").appendChild(filter_element);
@@ -46,40 +47,38 @@ function addFilter() {
 function applyFilter() {
 
 
-	// const table = document.getElementsByTagName("table")[0];
-	// let allRows = table.childNodes[3].childNodes;
-	// const filters = document.querySelectorAll('.filter-values div');
-	// for (let i = 1; i < allRows.length; i++) {
-	// 	let flag = true;
-	// 	for (let j = 0; j < filters.length; j++) {
-	// 		let filterName = filters[j].getAttribute("filter-name");
-	// 		let filterNum;
+	const table = document.getElementsByTagName("table")[0];
 
-	// 		if (table.classList.contains('std-table'))
-	// 			filterNum = stdFilterDictionary[filterName];
+	const filters = document.querySelectorAll('.filter-values div');
 
-	// 		else if (table.classList.contains('dept-table'))
-	// 			filterNum = deptFilterDictionary[filterName];
+	console.log(filters.length);
+	for (let i = 0; i < filters.length; i++) {
+		let filterName = filters[i].getAttribute("filter-name");
+		let filterValue = filters[i].getAttribute("filter-value");
 
-	// 		else if (table.classList.contains('crs-table'))
-	// 			filterNum = crsFilterDictionary[filterName];
+		let tdEles = document.querySelectorAll(`tbody td[value="${filterName}"]`);
+		// console.log(tdEles);
+		for (let i = 0; i < tdEles.length; i++) {
+			// console.log(tdEles[i]);
+			if (tdEles[i].textContent.includes(filterValue)) {
+				tdEles[i].parentElement.classList.remove("hide-filter");
+			} else {
 
-	// 		let filterValue = filters[j].getAttribute("filter-value");
-	// 		let tdEle = allRows[i].childNodes[filterNum - 1];
-	// 		// console.log(typeof tdEle.textContent, filterValue);
-	// 		if (!tdEle.textContent.includes(filterValue)) {
-	// 			flag = false
-	// 			break;
-	// 		}
-	// 	}
+				tdEles[i].parentElement.classList.add("hide-filter");
+			}
+		}
+	}
 
-	// 	if (flag === true) {
-	// 		allRows[i].classList.remove("hide-filter");
-	// 	} else {
-	// 		allRows[i].classList.add("hide-filter");
-	// 	}
+	if (filters.length == 0) {
+		let allRows = document.querySelectorAll(".hide-filter");
+		console.log(allRows);
+		for (let i = 0; i < allRows.length; i++) {
+			console.log(allRows[i]);
+			allRows[i].classList.remove("hide-filter");
+		}
 
-	// }
+	}
+
 }
 
 
@@ -216,12 +215,14 @@ document.addEventListener('contextmenu', function (e) {
 
 	editOptionLi.addEventListener('click', function () {
 		let tableType = document.querySelector("table");
+		const code = e.target.parentElement.childNodes[0].textContent;
+		console.log(code);
 		if (tableType.classList.contains("std-table"))
-			window.open("edit-student.html");
+			window.open(`edit-student.html?id=${code}`);
 		else if (tableType.classList.contains("crs-table"))
-			window.open("edit-course.html");
+			window.open(`edit-course.html?id=${code}`);
 		else if (tableType.classList.contains("dept-table"))
-			window.open("edit-department.html");
+			window.open(`edit-department.html?id=${code}`);
 		//
 		const existingContextMenu = document.querySelector('#contextMenu');
 		if (existingContextMenu) {
@@ -252,7 +253,7 @@ document.addEventListener('contextmenu', function (e) {
 		// Copy text in td element
 		const textToCopy = e.target.textContent;
 		navigator.clipboard.writeText(textToCopy);
-		console.log('Copied text:', textToCopy);
+		// console.log('Copied text:', textToCopy);
 		const existingContextMenu = document.querySelector('#contextMenu');
 		if (existingContextMenu) {
 			existingContextMenu.remove();

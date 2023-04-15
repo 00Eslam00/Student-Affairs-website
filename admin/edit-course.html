@@ -29,7 +29,7 @@
 
 			<div class="input">
 				<label for="code">Course Code</label>
-				<input type="text" placeholder="Enter Code" name="course_code" id="code">
+				<input type="text" placeholder="Enter Code" name="course_code" id="code" disabled>
 			</div>
 
 
@@ -43,12 +43,7 @@
 				<input type="number" name="course_credit" id="credit" placeholder="0-3" min="0" max="3">
 			</div>
 
-			<div class="input">
-				<label for="dept_related">Department Related</label>
-				<select name="dept_related" id="dept_related">
 
-				</select>
-			</div>
 			<div class="input">
 				<label for="level">Available at level </label>
 				<select name="available_at" id="level">
@@ -58,6 +53,14 @@
 					<option value="4">4</option>
 				</select>
 			</div>
+
+			<div class="input">
+				<label for="dept_related">Department Related</label>
+				<select name="dept_related" id="dept_related">
+
+				</select>
+			</div>
+
 
 			<div class="input">
 				<label for="avl-courses">Available Courses</label>
@@ -79,8 +82,9 @@
 			</div>
 		</form>
 	</div>
-	<script src="../js/localStorage/courses-setup.js"></script>
 	<script src="../js/nav-admin.js"></script>
+	<script src="../js/localStorage/courses-setup.js"></script>
+	<script src="../js/localStorage/edit-parser.js"></script>
 </body>
 
 </html>
