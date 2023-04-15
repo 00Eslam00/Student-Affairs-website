@@ -126,6 +126,24 @@ function generateRandomPassword() {
 
 
 
+
+function gradeToGPA(grade) {
+	if (grade >= 90) {
+		return 4.0;
+	} else if (grade >= 80) {
+		return 3.0 + (grade - 80) / 10;
+	} else if (grade >= 70) {
+		return 2.0 + (grade - 70) / 10;
+	} else if (grade >= 60) {
+		return 1.0 + (grade - 60) / 10;
+	} else {
+		return 0.0;
+	}
+}
+
+
+
+
 if (!window.localStorage.getItem("Students")) {
 	window.localStorage.setItem("Students", "{}");
 }
@@ -300,19 +318,8 @@ if (editForm)
 let viewTable = document.querySelector("table.std-table");
 if (viewTable) {
 	let Students = JSON.parse(window.localStorage.getItem("Students"));
+	let Courses = JSON.parse(window.localStorage.getItem("Courses"));
 	let tbody = document.querySelector("table.std-table tbody");
-
-	// <th style="width: 10%;">Std-ID</th>
-	// <th style="width: 15%;">Full-name</th>
-	// <th style="width: 15%;">Password</th>
-	// <th style="width: 10%;">Birth-Date</th>
-	// <th style="width: 5%;">GPA</th>
-	// <th style="width: 10%;">Gender</th>
-	// <th style="width: 5%;">Level</th>
-	// <th style="width: 13%;">Department</th>
-	// <th style="width: 10%;">E-mail</th>
-	// <th style="width: 15%;">Mobile</th>
-	// <th style="width: 10%;">
 
 
 	for (let key in Students) {
@@ -369,17 +376,6 @@ if (viewTable) {
 		stdstat.appendChild(selectStat);
 
 
-		// "Name": name,
-		// "Pass": generateRandomPassword(),
-		// "Dept": dept,
-		// "Birth-date": birthdate,
-		// "Gender": gender,
-		// "stat": stat,
-		// "Email": email,
-		// "Add": add,
-		// "Level": level,
-		// "Courses": courses
-
 
 		stdID.appendChild(document.createTextNode(`${key}`));
 
@@ -389,7 +385,20 @@ if (viewTable) {
 
 		stdBD.appendChild(document.createTextNode(`${Students[key]["Birth-date"]}`));
 
-		stdGPA.appendChild(document.createTextNode(`${2}`));
+		const stdCoures = Students[key]["Courses"];
+		let gpaSum = 0;
+		let totalHours = 0;
+		for (let crsCode in stdCoures) {
+			let totalGrade = Number(stdCoures[crsCode]["Team"]) + Number(stdCoures[crsCode]["Exam"]);
+			gpaSum += Number(Courses[crsCode]["Credit"]) * gradeToGPA(totalGrade);
+			totalHours += Number(Courses[crsCode]["Credit"]);
+		}
+
+		if (!totalHours)
+			gpaSum = 0;
+		else
+			gpaSum = gpaSum / totalHours;
+		stdGPA.appendChild(document.createTextNode(`${gpaSum}`));
 
 		let gender;
 		if (Students[key]["Gender"] == 1)

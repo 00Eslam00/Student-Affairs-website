@@ -320,12 +320,25 @@ if (viewTable) {
 	for (let key in courses) {
 		console.log(courses[key]);
 		let row = document.createElement("tr");
+
 		let crsCode = document.createElement("td");
+		crsCode.setAttribute("vlaue", "crsCode");
+
 		let crsName = document.createElement("td");
+		crsName.setAttribute("vlaue", "crsName");
+
 		let crsCredit = document.createElement("td");
+		crsCredit.setAttribute("vlaue", "crsCredit");
+
 		let crsLevel = document.createElement("td");
+		crsLevel.setAttribute("vlaue", "crsLevel");
+
 		let crsDept = document.createElement("td");
+		crsDept.setAttribute("vlaue", "crsDept");
+
 		let crsPre = document.createElement("td");
+		crsPre.setAttribute("vlaue", "crsPre");
+
 
 		crsCode.appendChild(document.createTextNode(`${key}`));
 		crsName.appendChild(document.createTextNode(`${courses[key]['Name']}`));

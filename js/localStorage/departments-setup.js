@@ -219,16 +219,22 @@ if (viewTable) {
 	for (let key in depts) {
 		// console.log(depts[key]);
 		let row = document.createElement("tr");
-		let deptCode = document.createElement("td");
-		let deptname = document.createElement("td");
-		let deptcrs = document.createElement("td");
 
-		deptCode.appendChild(document.createTextNode(`${key}`));
-		deptname.appendChild(document.createTextNode(`${depts[key]['Name']}`));
-		deptcrs.appendChild(document.createTextNode(`${depts[key]['courses'].join(", ")}`));
-		row.appendChild(deptCode);
-		row.appendChild(deptname);
-		row.appendChild(deptcrs);
+		let deptID = document.createElement("td");
+		deptID.setAttribute("value", "deptID");
+
+		let deptName = document.createElement("td");
+		deptName.setAttribute("value", "deptName");
+
+		let deptCrs = document.createElement("td");
+		deptCrs.setAttribute("value", "deptCrs");
+
+		deptID.appendChild(document.createTextNode(`${key}`));
+		deptName.appendChild(document.createTextNode(`${depts[key]['Name']}`));
+		deptCrs.appendChild(document.createTextNode(`${depts[key]['courses'].join(", ")}`));
+		row.appendChild(deptID);
+		row.appendChild(deptName);
+		row.appendChild(deptCrs);
 		tbody.appendChild(row);
 	}
 }
