@@ -1,24 +1,39 @@
 <!DOCTYPE html>
 <html>
-    <head>
 
-    </head>
+<head>
 
-    <center><h1>Welcome Student</h1> </center>
-        <title>Login</title>
-        <meta name="description" content="Login to your account">
-    <body>
-        <center>
-                <h1>Login</h1>
-            <form action="login.php">
-                <label for="username">Username :</label>
-                <input type="text" id="username" name="username" required placeholder="UserName"><br><br>
-                <label for="password">Password :</label>
-                <input type="password" id="password" name="password" required placeholder="Password" ><br><br>
-                <br>
-                <center><input type="submit" value="Login" ></center>
-            </form>
-        </center>
-        
-    </body>
+</head>
+
+
+<title>Login</title>
+<meta name="description" content="Login to your account">
+<link href="css/style.css" rel="stylesheet" />
+<link rel="stylesheet" href="css/login.css">
+
+<body>
+    <header>
+        <a href="index.html" class="web-logo"><img src="images/logo.jpg" /></a>
+
+
+
+    </header>
+
+    <h1>
+        FCAI
+    </h1>
+    <form action="login.php">
+
+
+        <input type="text" id="username" name="username" required placeholder="UserName"><br><br>
+
+
+        <input type="password" id="password" name="password" required placeholder="Password" maxlength="20"><br><br>
+
+
+        <input type="submit" value="Login">
+    </form>
+
+</body>
+
 </html>
