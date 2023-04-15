@@ -23,18 +23,26 @@
 	<div id="navbar-placeholder"></div>
 	<h1 class="he">Edit Student Information</h1>
 	<div class="cont">
-		<form method="get">
+		<form method="get" class="edit-std">
+
 			<div class="input">
-				<label for="Name">Name</label>
-				<input id="Name" type="text" placeholder="Enter Name">
+				<label for="code">Student Code</label>
+				<input type="text" placeholder="Enter Code" name="course_code" id="code" maxlength="10">
 			</div>
+
 			<div class="input">
-				<label for="Birth">Birth Date</label>
-				<input id="Birth" type="date" placeholder="Enter BDate">
+				<label for="pass">Password</label>
+				<input id="pass" type="text" placeholder="Enter Name">
 			</div>
+
 			<div class="input">
-				<label for="Level">Level</label>
-				<select id="Level">
+				<label for="name">Name</label>
+				<input id="name" type="text" placeholder="Enter Name">
+			</div>
+
+			<div class="input">
+				<label for="level">Level</label>
+				<select id="level">
 					<option value="1">1</option>
 					<option value="2">2</option>
 					<option value="3">3</option>
@@ -43,8 +51,8 @@
 			</div>
 
 			<div class="input">
-				<label for="d-department">Department</label>
-				<select name="d-department" id="d-department">
+				<label for="dept">Department</label>
+				<select name="d-department" id="dept">
 					<option value="1">department 1</option>
 					<option value="2">department 2</option>
 					<option value="3">department 3</option>
@@ -52,18 +60,38 @@
 					<option value="5">department 5</option>
 				</select>
 			</div>
+
 			<div class="input">
-				<label for="Mail">E-mail</label>
-				<input id="Mail" type="email" placeholder="Enter mail">
+				<label for="courses">courses</label>
+				<select name="courses" id="courses" class="optional courses">
+					<option value="0"></option>
+					<option value="1">course 1</option>
+					<option value="2">course 2</option>
+					<option value="3">course 3</option>
+					<option value="4">course 4</option>
+					<option value="5">course 5</option>
+				</select>
+			</div>
+
+			<div class="input">
+				<label for="team">Term Work</label>
+				<input class="optional" id="team" type="number" placeholder="Enter Term Work" disabled>
+			</div>
+
+			<div class="input">
+				<label for="exam">Exam Work</label>
+				<input class="optional" id="exam" type="number" placeholder="Enter Exam Work" disabled>
 			</div>
 
 			<div class="buttons">
-				<button type="button">Update</button>
-				<button type="button">reset</button>
+				<button type="submit">Update</button>
+				<button type="reset">reset</button>
 			</div>
 		</form>
 	</div>
 	<script src="../js/nav-admin.js"></script>
+	<script src="../js/admin-edit.js"></script>
+	<script src="../js/localStorage/student-setup.js"></script>
 </body>
 
 </html>

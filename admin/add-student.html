@@ -24,7 +24,9 @@
 	<div id="navbar-placeholder"></div>
 	<h1>Add Student</h1><br />
 	<main class="main">
-		<form id="add-student-form" method="post">
+		<form id="add-student-form" class="add-std" method="post">
+
+
 			<div class="box name">
 				<label for="name"><span>Name</span></label>
 				<input id="name" type="text" placeholder="Enter Name" />
@@ -35,26 +37,25 @@
 				<input id="birthdate" type="date" />
 			</div>
 			<div class="box gender">
-				<label for="stat"><span>Select Gender</span></label>
-				<select id="gender" name="gender" required>
-					<option value="male">Male</option>
-					<option value="female">Female</option>
-					<option value="other">Other</option>
+				<label for="gender">Select Gender</label>
+				<select id="gender" name="gender">
+					<option value="1">Male</option>
+					<option value="2">Female</option>
 				</select>
 			</div>
 			<div class="box stat">
-				<label for="stat"><span>Select Status </span></label>
-				<select name="stat" id="stat" required>
-					<option value="active">Active</option>
-					<option value="not-active">Not-Active</option>
+				<label for="stat">Status</label>
+				<select name="stat" id="stat">
+					<option value="1">Active</option>
+					<option value="0">Not-Active</option>
 				</select>
 			</div>
 			<div class="box email">
-				<label for="email"><span>Email</span></label>
+				<label for="email">Email</label>
 				<input id="email" type="email" placeholder="Enter email" />
 			</div>
 			<div class="box phone">
-				<label for="phone"><span>Phone</span></label>
+				<label for="phone">Phone</label>
 				<input id="phone" type="tel" placeholder="Enter Phone" />
 			</div>
 			<div class="box address">
@@ -62,14 +63,14 @@
 				<input id="add" type="add" placeholder="Enter Address" />
 			</div>
 			<div class="submit">
-				<button onclick="prompt('Student')" type="button">Submit</button>
+				<button type="submit">Submit</button>
 			</div>
 			<div class="reset">
 				<button type="reset">Reset</button>
 			</div>
 		</form>
 	</main>
-	<script src="../js/admin-add.js"></script>
+	<script src="../js/localStorage/student-setup.js"></script>
 	<script src="../js/nav-admin.js"></script>
 </body>
 

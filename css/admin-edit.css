@@ -22,8 +22,8 @@
 	text-align: center;
 	background-color: #fafafa;
 	height: fit-content;
-	width: 500px;
-	margin-left: 30%;
+	width: 55%;
+	margin: auto;
 	border-radius: 10px;
 }
 
@@ -31,6 +31,7 @@ form {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-evenly;
+	width: 100%;
 }
 
 .input {
@@ -49,7 +50,7 @@ form {
 input {
 	background-color: white;
 	padding: 10px;
-	font-size: 17px;
+	font-size: 26px;
 	border-radius: 7px;
 	outline-color: #3aa8ef;
 	width: 85%;
@@ -58,10 +59,10 @@ input {
 select {
 	background-color: white;
 	padding: 10px;
-	font-size: 17px;
 	border-radius: 8px;
 	outline-color: #3aa8ef;
 	width: 85%;
+	font-size: 26px;
 }
 
 

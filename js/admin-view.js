@@ -44,67 +44,42 @@ function addFilter() {
 
 
 function applyFilter() {
-	const stdFilterDictionary = {
-		'Std-ID': 1,
-		'Name': 2,
-		'Date': 3,
-		'GPA': 4,
-		'Gender': 5,
-		'Level': 6,
-		'Department': 7,
-		'Email': 8,
-		'Mobile': 9
-	}
-
-	const deptFilterDictionary = {
-		'Dept-ID': 1,
-		'Dept-name': 2,
-		'Dept-courses': 3
-	}
 
 
-	const crsFilterDictionary = {
-		'Course-ID': 1,
-		'course-name': 2,
-		'Department': 3,
-		'Course-prerequistes': 4
-	}
+	// const table = document.getElementsByTagName("table")[0];
+	// let allRows = table.childNodes[3].childNodes;
+	// const filters = document.querySelectorAll('.filter-values div');
+	// for (let i = 1; i < allRows.length; i++) {
+	// 	let flag = true;
+	// 	for (let j = 0; j < filters.length; j++) {
+	// 		let filterName = filters[j].getAttribute("filter-name");
+	// 		let filterNum;
 
+	// 		if (table.classList.contains('std-table'))
+	// 			filterNum = stdFilterDictionary[filterName];
 
-	const table = document.getElementsByTagName("table")[0];
-	let allRows = table.childNodes[3].childNodes;
-	const filters = document.querySelectorAll('.filter-values div');
-	for (let i = 1; i < allRows.length; i++) {
-		let flag = true;
-		for (let j = 0; j < filters.length; j++) {
-			let filterName = filters[j].getAttribute("filter-name");
-			let filterNum;
+	// 		else if (table.classList.contains('dept-table'))
+	// 			filterNum = deptFilterDictionary[filterName];
 
-			if (table.classList.contains('std-table'))
-				filterNum = stdFilterDictionary[filterName];
+	// 		else if (table.classList.contains('crs-table'))
+	// 			filterNum = crsFilterDictionary[filterName];
 
-			else if (table.classList.contains('dept-table'))
-				filterNum = deptFilterDictionary[filterName];
+	// 		let filterValue = filters[j].getAttribute("filter-value");
+	// 		let tdEle = allRows[i].childNodes[filterNum - 1];
+	// 		// console.log(typeof tdEle.textContent, filterValue);
+	// 		if (!tdEle.textContent.includes(filterValue)) {
+	// 			flag = false
+	// 			break;
+	// 		}
+	// 	}
 
-			else if (table.classList.contains('crs-table'))
-				filterNum = crsFilterDictionary[filterName];
+	// 	if (flag === true) {
+	// 		allRows[i].classList.remove("hide-filter");
+	// 	} else {
+	// 		allRows[i].classList.add("hide-filter");
+	// 	}
 
-			let filterValue = filters[j].getAttribute("filter-value");
-			let tdEle = allRows[i].childNodes[filterNum - 1];
-			// console.log(typeof tdEle.textContent, filterValue);
-			if (!tdEle.textContent.includes(filterValue)) {
-				flag = false
-				break;
-			}
-		}
-
-		if (flag === true) {
-			allRows[i].classList.remove("hide-filter");
-		} else {
-			allRows[i].classList.add("hide-filter");
-		}
-
-	}
+	// }
 }
 
 
