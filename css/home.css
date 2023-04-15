@@ -46,12 +46,22 @@
 	margin-bottom: 20px;
 }
 
-/* .post:hover {
+.post-cont .publish-btn {
+	/* width: 10%; */
+	font-size: 26px;
+	padding: 10px;
+	text-align: center;
+	margin: 10px auto;
+	border-radius: 6px;
+	background-color: #3aa8ef;
+	color: white;
+	border: none;
+	cursor: pointer;
+}
 
-	background-color: #3aa7ef3a;
-	outline: 2px solid #3aa8ef;
-} */
-
+.post-cont .publish-btn:hover {
+	background-color: #0069d9;
+}
 
 /*
 .title {
@@ -99,7 +109,7 @@
 	width: 150px;
 	height: 300px;
 	top: 24px;
-	left: 0;
+	right: 0;
 	display: none;
 }
 
@@ -119,5 +129,5 @@
 
 .menu li:hover {
 	padding-right: 6px;
-	font-weight: bold;
+	color: red;
 }

@@ -2,7 +2,7 @@
 
 <head>
 	<link rel="stylesheet" href="../css/all.min.css">
-	<link rel="stylesheet" href="../css/admin-home.css">
+	<link rel="stylesheet" href="../css/home.css">
 	<link rel="stylesheet" href="../css/navbar.css">
 	<link rel="stylesheet" href="../css/navbar-admin.css">
 
@@ -26,6 +26,9 @@
 		<input type="text" name="" id="" placeholder="Write the heading ...">
 		<textarea id="my-textarea" class="text" name="message" rows="10" cols="100" placeholder="Write a post ..."
 			style="resize: none;"></textarea>
+
+		<button class="publish-btn" type="button">Publish</button>
+
 	</div>
 
 
@@ -47,19 +50,21 @@
 				embrace active learning as a vital tool to help students succeed in their academic and professional
 				lives.
 			</p>
+			<span class="post-icon"></span>
+			<div class="menu">
+				<ul>
+					<li>Delete</li>
+				</ul>
+			</div>
 		</div>
 
 
-		<!-- <span class="post-icon"></span>
-		<div class="menu">
-			<ul>
-				<li>Edit</li>
-				<li>Delete</li>
-			</ul>
-		</div> -->
+
 
 
 	</div>
-	<script src="../js/admin-home.js"></script>
+	<script src="../js/localStorage/setup-storage.js"></script>
 	<script src="../js/nav-admin.js"></script>
+	<script src="../js/home.js"></script>
+	<script src="../js/localStorage/posts-setup.js"></script>
 </body>
