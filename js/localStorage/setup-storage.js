@@ -24,6 +24,9 @@ if (!window.localStorage.getItem("Student-login")) {
 	window.localStorage.setItem("Student-login", '');
 }
 
+if (!window.localStorage.getItem("Admin-info")) {
+	window.localStorage.setItem("Admin-info", '{"User" : "admin" , "Pass" : "admin"}');
+}
 if (!window.localStorage.getItem("Admin-login")) {
 	window.localStorage.setItem("Admin-login", '');
 }
