@@ -13,7 +13,7 @@ document.addEventListener('click', (ele) => {
 		ele.nextElementSibling.style.display = 'block';
 });
 
-
+if(menu)
 menu.addEventListener('click', (event) => {
 	if (event.target.tagName === 'LI') {
 		console.log(event.target.textContent); // do something with selected option
