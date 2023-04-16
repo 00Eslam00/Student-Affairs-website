@@ -66,6 +66,7 @@ else if (editPage.classList.contains("edit-crs")) {
 else if (editPage.classList.contains("edit-std")) {
 	const Students = JSON.parse(localStorage.getItem("Students"));
 	const Departments = JSON.parse(localStorage.getItem("Departments"));
+	const Courses = JSON.parse(localStorage.getItem("Courses"));
 
 
 	if (Students[id]) {
@@ -91,9 +92,49 @@ else if (editPage.classList.contains("edit-std")) {
 
 
 
-		document.getElementById("name").value = Students[id]["Name"];
-		document.getElementById("name").value = Students[id]["Name"];
+		let stdCrss = document.getElementById("std-courses");
+
+		let crss = Object.keys(Students[id]["Courses"]);
+		console.log(crss);
+		for (let i = 0; i < crss.length; i++) {
+			let crs = crss[i];
+			let opt = document.createElement("option");
+			opt.value = crs;
+			opt.appendChild(document.createTextNode(Courses[crs]["Name"]));
+			stdCrss.appendChild(opt);
+		}
+
+
+		let optCourses = document.querySelector(".optional.courses");
+		if (optCourses)
+			optCourses.addEventListener("change", () => {
+				if (optCourses.value == '0') {
+					document.querySelector("#team").setAttribute("disabled", "");
+					document.querySelector("#exam").setAttribute("disabled", "");
+				} else {
+					document.querySelector("#team").removeAttribute("disabled");
+					document.querySelector("#exam").removeAttribute("disabled");
+
+					let crsOpt = document.querySelector(".optional.courses").value;
+
+					if (Students[id]["Courses"][crsOpt]["Team"])
+						document.querySelector("#team").value = Students[id]["Courses"][crsOpt]["Team"];
+					else
+						document.querySelector("#team").value = '';
+					if (Students[id]["Courses"][crsOpt]["Exam"])
+						document.querySelector("#exam").value = Students[id]["Courses"][crsOpt]["Exam"];
+					else
+						document.querySelector("#exam").value = '';
+				}
+			});
+
 
 
 	}
+
+
+
+
+
+
 }

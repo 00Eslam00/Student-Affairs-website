@@ -154,6 +154,7 @@ document.addEventListener('click', function (e) {
 		if (document.querySelector('.dialog')) {
 			document.querySelector('.overlay').remove();
 			document.querySelector('.dialog').remove();
+			this.location.reload();
 		}
 
 
@@ -238,44 +239,25 @@ if (editForm)
 
 			if (code in Students) {
 
-				//old data
-				const birthdate = Students[code]["Birth-date"];
-				const add = Students[code]["Add"];
-				const stat = Students[code]["Stat"];
-				const email = Students[code]["Email"];
-				const gender = Students[code]["Gender"];
-				const mobile = Students[code]["Mobile"];
-
-
 				// new data
 				const pass = document.getElementById("pass").value;
 				const name = document.getElementById("name").value;
 				const level = document.getElementById("level").value;
 				const dept = document.getElementById("dept").value;
-				const course = document.getElementById("courses").value;
+				const course = document.getElementById("std-courses").value;
 				const team = document.getElementById("team");
 				const exam = document.getElementById("exam");
 
 				let courses = Students[code]["Courses"];
 
-				if (!team.hasAttribute("disabled"))
+				if (!team.hasAttribute("disabled")) {
 					courses[course]["Team"] = team.value;
+				}
+
 				if (!exam.hasAttribute("disabled"))
 					courses[course]["Exam"] = exam.value;
 
-				// Students[code] = {
-				// 	"Pass": pass,
-				// 	"Name": name,
-				// 	"Dept": dept,
-				// 	"Level": level,
-				// 	"Courses": courses,
-				// 	"Birth-date": birthdate,
-				// 	"Add": add,
-				// 	"Stat": stat,
-				// 	"Email": email,
-				// 	"Gender": gender,
-				// 	"Mobile": mobile
-				// }
+
 
 				Students[code]["Pass"] = pass;
 				Students[code]["Name"] = name;
@@ -376,6 +358,9 @@ if (viewTable) {
 		let totalHours = 0;
 		for (let crsCode in stdCoures) {
 			let totalGrade = Number(stdCoures[crsCode]["Team"]) + Number(stdCoures[crsCode]["Exam"]);
+			console.log(totalGrade);
+			if (isNaN(totalGrade))
+				continue;
 			gpaSum += Number(Courses[crsCode]["Credit"]) * gradeToGPA(totalGrade);
 			totalHours += Number(Courses[crsCode]["Credit"]);
 		}

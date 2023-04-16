@@ -7,5 +7,7 @@ if (optCourses)
 		} else {
 			document.querySelector("#team").removeAttribute("disabled");
 			document.querySelector("#exam").removeAttribute("disabled");
+
+
 		}
 	});
