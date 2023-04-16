@@ -29,7 +29,7 @@ window.onclick = function (e) {
 		var dropdown_items = ["courses", "account"];
 		for (var j = 0; j < clicked_items.length; j++) {
 			var myDropdown = document.getElementById(clicked_items[j]);
-			if (myDropdown.classList.contains('show')) {
+			if (myDropdown && myDropdown.classList.contains('show')) {
 				myDropdown.classList.remove('show');
 				document.getElementById(dropdown_items[j]).classList.remove("active");
 				return;
@@ -37,6 +37,20 @@ window.onclick = function (e) {
 		}
 	}
 }
+
+
+
+
+document.addEventListener("click", (event) => {
+
+	if (event.target.id == "logout") {
+		event.preventDefault();
+		localStorage.setItem("Student-login", '');
+		window.location.href = "login.html";
+	}
+
+})
+
 
 // Load the navbar inside html page
 document.addEventListener("DOMContentLoaded", function () {
@@ -46,6 +60,10 @@ document.addEventListener("DOMContentLoaded", function () {
 			document.getElementById("navbar-placeholder").innerHTML = this.responseText;
 		}
 	};
-	xhr.open("GET", "navbar-student.html", true);
+
+	if (localStorage.getItem("Student-login") == '' && document.querySelector(".nav-changer"))
+		xhr.open("GET", "navbar-login.html", true);
+	else
+		xhr.open("GET", "navbar-student.html", true);
 	xhr.send();
 });

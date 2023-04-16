@@ -26,7 +26,7 @@ function prompt() {
 	dialog.appendChild(button);
 	document.body.appendChild(dialog);
 	dialog.style.cssText = `
-	position:absolute;
+	position:fixed;
     top:50%;
     left:50%;
     transform:translate(-50%,-50%);

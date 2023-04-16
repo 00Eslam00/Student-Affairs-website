@@ -49,7 +49,7 @@ function prompt(ele, flag, code) {
 	dialog.appendChild(button);
 	document.body.appendChild(dialog);
 	dialog.style.cssText = `
-	position:absolute;
+	position:fixed;
     top:50%;
     left:50%;
     transform:translate(-50%,-50%);
@@ -263,21 +263,25 @@ if (editForm)
 				if (!exam.hasAttribute("disabled"))
 					courses[course]["Exam"] = exam.value;
 
-				Students[code] = {
-					"Pass": pass,
-					"Name": name,
-					"Dept": dept,
-					"Level": level,
-					"Courses": courses,
-					"Birth-date": birthdate,
-					"Add": add,
-					"Stat": stat,
-					"Email": email,
-					"Gender": gender,
-					"Mobile": mobile
-				}
+				// Students[code] = {
+				// 	"Pass": pass,
+				// 	"Name": name,
+				// 	"Dept": dept,
+				// 	"Level": level,
+				// 	"Courses": courses,
+				// 	"Birth-date": birthdate,
+				// 	"Add": add,
+				// 	"Stat": stat,
+				// 	"Email": email,
+				// 	"Gender": gender,
+				// 	"Mobile": mobile
+				// }
 
-
+				Students[code]["Pass"] = pass;
+				Students[code]["Name"] = name;
+				Students[code]["Dept"] = dept;
+				Students[code]["Level"] = level;
+				Students[code]["Courses"] = courses;
 
 
 				window.localStorage.setItem("Students", JSON.stringify(Students));

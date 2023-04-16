@@ -3,38 +3,189 @@
 
 <head>
 
+	<title>Login</title>
+	<meta name="description" content="Login to your account">
+
+	<script>
+		if (localStorage.getItem("Student-login") != '') {
+			window.location.href = "index.html";
+		}
+	</script>
+
+
+	<link rel="stylesheet" href="css/login.css">
+	<link rel="stylesheet" href="css/all.min.css">
+	<link rel="stylesheet" href="css/navbar.css">
+
+	<style>
+		nav #login,
+		nav #login i {
+			background-color: #3aa8ef;
+			color: white;
+			border-radius: 5px;
+		}
+
+	</style>
+
 </head>
 
 
-<title>Login</title>
-<meta name="description" content="Login to your account">
-<link href="css/style.css" rel="stylesheet" />
-<link rel="stylesheet" href="css/login.css">
 
 <body>
-	<header>
-		<a href="index.html" class="web-logo"><img src="images/logo.jpg" /></a>
+	<div id="navbar-placeholder" class="nav-changer"></div>
 
 
 
-	</header>
-
-	<h1>
-		FCAI
-	</h1>
-	<form action="login.php">
+	<form id="login-form">
 
 
-		<input type="text" id="username" name="username" required placeholder="UserName"><br><br>
+		<input type="text" id="username" name="username" placeholder="UserName"><br><br>
 
 
-		<input type="password" id="password" name="password" required placeholder="Password" maxlength="20"><br><br>
+		<input type="password" id="password" name="password" placeholder="Password" maxlength="20"><br><br>
 
 
 		<input type="submit" value="Login">
 	</form>
 
 	<script src="js/localStorage/setup-storage.js"></script>
+	<script src="js/nav-std.js"></script>
+
+	<script>
+
+
+		function prompt() {
+
+			const overlay = document.createElement('div');
+			overlay.classList.add('overlay');
+			overlay.style.cssText = `
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.5);
+			z-index: 9998;
+			`
+			// Append overlay to body
+			document.body.appendChild(overlay);
+
+			let dialog = document.createElement('div');
+			dialog.classList.add('dialog');
+			let paragraph = document.createElement('p');
+			let button = document.createElement('button');
+			button.classList.add('d-btn');
+			paragraph.textContent = `password and username doesn't matched`;
+			color = "red"
+
+			dialog.appendChild(paragraph);
+			dialog.appendChild(button);
+			document.body.appendChild(dialog);
+			dialog.style.cssText = `
+			position:fixed;
+			top:50%;
+			left:50%;
+			transform:translate(-50%,-50%);
+			background-color:rgba(255,255,255);
+			color:${color};
+			width:50%;
+			height:25%;
+			padding:10px;
+			border-radius:5px;
+			display:flex;
+			flex-direction:column;
+			justify-content:space-around;
+			align-items:center;
+			font-size:1.5rem;
+			z-index: 9999;
+			`;
+
+			paragraph.style.cssText = `
+			width: fit-content;
+			padding: 10px;
+			text-align: center;
+			font-family: Arial, Helvetica, sans-serif;
+			`
+
+			button.textContent = 'OK';
+
+			button.style.cssText = `
+			padding: 12px;
+			width: 12%;
+			margin-top: 0px !important;
+			margin-right: 0px  !important;
+			margin-top: 20px;
+			display: inline-block;
+			background-color: #3aa8ef;
+			border-radius: 8px;
+			color: white;
+			padding: 10px;
+			border: none;
+			font-size: 26px;
+			cursor: pointer;
+			font-family: Arial, Helvetica, sans-serif;
+			`
+		}
+
+
+		document.addEventListener('click', function (e) {
+			if (e.target.tagName != 'BUTTON' || e.target.classList.contains('d-btn')) {
+
+				//console.log(document.querySelector('.dialog'));
+				if (document.querySelector('.dialog')) {
+					document.querySelector('.overlay').remove();
+					document.querySelector('.dialog').remove();
+				}
+
+
+			}
+		});
+
+
+		function validateForm() {
+			let formValid = true;
+			const inputs = document.querySelectorAll('input');
+
+			inputs.forEach((input) => {
+				if (input.value.trim() === '') {
+					formValid = false;
+				}
+			});
+
+			return formValid;
+		}
+
+
+		let formLogin = document.querySelector("form#login-form");
+		console.log(formLogin);
+		if (formLogin)
+			formLogin.addEventListener("submit", (event) => {
+				event.preventDefault();
+
+				if (!validateForm()) {
+					prompt();
+					return;
+				}
+
+
+				let Students = JSON.parse(localStorage.getItem("Students"));
+				let userName = document.getElementById("username").value;
+				let pass = document.getElementById("password").value;
+
+				if (!Students[userName] || Students[userName]["Pass"] != pass) {
+					prompt();
+					return;
+				}
+
+				localStorage.setItem("Student-login", userName);
+				location.href = "index.html";
+
+			})
+
+
+	</script>
+
+
 
 </body>
 

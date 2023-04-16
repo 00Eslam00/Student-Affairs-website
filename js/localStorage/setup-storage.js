@@ -20,3 +20,11 @@ if (!window.localStorage.getItem("Posts")) {
 	window.localStorage.setItem("Posts", '{}');
 }
 
+if (!window.localStorage.getItem("Student-login")) {
+	window.localStorage.setItem("Student-login", '');
+}
+
+if (!window.localStorage.getItem("Admin-login")) {
+	window.localStorage.setItem("Admin-login", '');
+}
+
