@@ -154,7 +154,6 @@ document.addEventListener('click', function (e) {
 		if (document.querySelector('.dialog')) {
 			document.querySelector('.overlay').remove();
 			document.querySelector('.dialog').remove();
-			this.location.reload();
 		}
 
 

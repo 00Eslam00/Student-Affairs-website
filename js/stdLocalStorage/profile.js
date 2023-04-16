@@ -126,6 +126,7 @@ let profileForm = document.getElementById("std-profile");
 if (profileForm) {
 
 	let Students = JSON.parse(localStorage.getItem("Students"));
+	let Courses = JSON.parse(localStorage.getItem("Courses"));
 	let stdLogin = localStorage.getItem("Student-login");
 	let stdInfo = Students[stdLogin];
 
@@ -160,7 +161,9 @@ if (profileForm) {
 	for (let crsCode in stdCoures) {
 		let totalGrade = Number(stdCoures[crsCode]["Team"]) + Number(stdCoures[crsCode]["Exam"]);
 		gpaSum += Number(Courses[crsCode]["Credit"]) * gradeToGPA(totalGrade);
-		totalHours += Number(Courses[crsCode]["Credit"]);
+
+		if (!isNaN(totalGrade) && totalGrade >= 50)
+			totalHours += Number(Courses[crsCode]["Credit"]);
 	}
 
 	if (!totalHours)
