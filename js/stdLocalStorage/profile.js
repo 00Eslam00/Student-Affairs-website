@@ -185,9 +185,6 @@ if (profileForm) {
 	document.getElementById("mobile").value = stdInfo["Mobile"];
 	document.getElementById("email").value = stdInfo["Email"];
 
-
-
-
 }
 
 
