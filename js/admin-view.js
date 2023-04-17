@@ -141,7 +141,7 @@ function applyFilter() {
 
 	const filters = document.querySelectorAll('.filter-values div');
 	let tableRows = document.querySelectorAll("tbody tr");
-	console.log(filters.length);
+	// console.log(filters.length);
 	// for (let i = 0; i < filters.length; i++) {
 	// 	let filterName = filters[i].getAttribute("filter-name");
 	// 	let filterValue = filters[i].getAttribute("filter-value");
