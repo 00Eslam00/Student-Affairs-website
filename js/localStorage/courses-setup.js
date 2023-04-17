@@ -300,7 +300,7 @@ if (viewTable) {
 
 
 	for (let key in courses) {
-		console.log(courses[key]);
+		// console.log(courses[key]);
 		let row = document.createElement("tr");
 
 		let crsCode = document.createElement("td");
@@ -329,7 +329,7 @@ if (viewTable) {
 		crsDept.appendChild(document.createTextNode(`${courses[key]['Dept']}`));
 		crsPre.appendChild(document.createTextNode(`${courses[key]['Pre-courses'].join(", ")}`));
 
-		console.log(crsCode, crsName, crsCredit, crsLevel, crsDept)
+		// console.log(crsCode, crsName, crsCredit, crsLevel, crsDept)
 		row.appendChild(crsCode);
 		row.appendChild(crsName);
 		row.appendChild(crsCredit);

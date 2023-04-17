@@ -357,7 +357,6 @@ if (viewTable) {
 		let totalHours = 0;
 		for (let crsCode in stdCoures) {
 			let totalGrade = Number(stdCoures[crsCode]["Team"]) + Number(stdCoures[crsCode]["Exam"]);
-			console.log(totalGrade);
 			if (isNaN(totalGrade))
 				continue;
 			gpaSum += Number(Courses[crsCode]["Credit"]) * gradeToGPA(totalGrade);
