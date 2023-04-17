@@ -133,10 +133,13 @@ function gradeToGPA(grade) {
 	} else if (grade >= 80) {
 		return 3.0 + (grade - 80) / 10;
 	} else if (grade >= 70) {
-		return 2.0 + (grade - 70) / 10;
+		return 3.0 + (grade - 70) / 10;
 	} else if (grade >= 60) {
-		return 1.0 + (grade - 60) / 10;
-	} else {
+		return 2.0 + (grade - 60) / 10;
+	} else if (grade >= 50) {
+		return 2.0 + (grade - 50) / 10;
+	}
+	else {
 		return 0.0;
 	}
 }
@@ -365,6 +368,7 @@ if (viewTable) {
 				continue;
 			gpaSum += Number(Courses[crsCode]["Credit"]) * gradeToGPA(totalGrade);
 			totalHours += Number(Courses[crsCode]["Credit"]);
+			console.log(totalGrade, gpaSum, totalHours);
 		}
 
 		if (!totalHours)
