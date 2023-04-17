@@ -56,8 +56,8 @@ if (stdTable) {
 			alphaGrade = getLetterGrade(res);
 
 
-		let stdLevel = std["Level"];
-		let stdLevelNum = std["Level"];
+		let stdLevel = Courses[crs]["Level"];
+		let stdLevelNum = Courses[crs]["Level"];
 
 		if (stdLevel == 1)
 			stdLevel = "First Level";
