@@ -251,14 +251,37 @@ document.addEventListener("click", (ele) => {
 		}
 	}
 
-	else if (ele.classList.contains('std-stat')) {
-		let selectStat = document.querySelector('.select-stat');
-		if (selectStat.value != 2 && selectStat.value != ele.value) {
-			ele.parentElement.parentElement.classList.add("hide-stat");
-		}
-	}
+	// else if (ele.classList.contains('std-stat')) {
+	// 	let selectStat = document.querySelector('.select-stat');
+	// 	if (selectStat.value != 2 && selectStat.value != ele.value) {
+	// 		ele.parentElement.parentElement.classList.add("hide-stat");
+	// 	}
+	// }
 });
 
+
+
+document.addEventListener("change", (ele) => {
+	ele = ele.target;
+	let selectStat = document.querySelector('.select-stat');
+	if (selectStat.value != 2 && selectStat.value != ele.value) {
+		ele.parentElement.parentElement.classList.add("hide-stat");
+	}
+
+	let stdId = ele.parentElement.parentElement.childNodes[0].textContent;
+	// console.log(stdId);
+	let Students = JSON.parse(localStorage.getItem("Students"));
+	Students[stdId]["stat"] = ele.value;
+	// console.log(Students[stdId]["stat"]);
+
+	if (ele.value == 0 && localStorage.getItem("Student-login")) {
+		localStorage.setItem("Student-login", '');
+	}
+
+
+	localStorage.setItem("Students", JSON.stringify(Students));
+
+});
 
 
 document.addEventListener('contextmenu', function (e) {

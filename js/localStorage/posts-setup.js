@@ -97,10 +97,6 @@ if (publisher) {
 			Posts[Vars["post-id"]] = {};
 			Posts[Vars["post-id"]]["Head"] = headVal;
 			Posts[Vars["post-id"]]["Body"] = bodyVal;
-			Vars["post-id"] = Number(Vars["post-id"]) + 1;
-			localStorage.setItem("Vars", JSON.stringify(Vars));
-			localStorage.setItem("Posts", JSON.stringify(Posts));
-
 
 			let span;
 			let div;
@@ -117,6 +113,7 @@ if (publisher) {
 			ul = document.createElement('ul');
 			li = document.createElement('li');
 			li.textContent = 'Delete';
+			li.classList.add("delete-post");
 
 			ul.appendChild(li);
 			div.appendChild(ul);
@@ -138,12 +135,17 @@ if (publisher) {
 			post.appendChild(span);
 			post.appendChild(div);
 
+			post.setAttribute("post-id", Vars["post-id"]);
 			let posts = document.querySelector(".news");
 			posts.insertBefore(post, posts.firstChild)
 
 
 			document.querySelector("input").value = '';
 			document.querySelector("textarea").value = '';
+
+			Vars["post-id"] = Number(Vars["post-id"]) + 1;
+			localStorage.setItem("Vars", JSON.stringify(Vars));
+			localStorage.setItem("Posts", JSON.stringify(Posts));
 		}
 
 
@@ -163,6 +165,7 @@ if (posts) {
 		id = `${sortedKeys[i]}`;
 		let post = document.createElement("div");
 		post.classList.add("post");
+		post.setAttribute("post-id", id);
 
 		let head = document.createElement("p");
 		head.classList.add("post-title");
@@ -186,6 +189,7 @@ if (posts) {
 			ul = document.createElement('ul');
 			li = document.createElement('li');
 			li.textContent = 'Delete';
+			li.classList.add("delete-post");
 
 			ul.appendChild(li);
 			div.appendChild(ul);
@@ -206,3 +210,5 @@ if (posts) {
 
 
 }
+
+

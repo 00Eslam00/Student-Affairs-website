@@ -107,9 +107,9 @@
 .menu {
 	position: absolute;
 	width: 150px;
-	height: 300px;
+	height: 100px;
 	top: 24px;
-	right: 0;
+	right: 5px;
 	display: none;
 }
 
@@ -117,7 +117,6 @@
 	list-style: none;
 	margin: 0;
 	padding: 0;
-	direction: ltr;
 	background-color: #f9f9f9;
 	border: 1px solid #ccc;
 }
@@ -127,7 +126,55 @@
 	cursor: pointer;
 }
 
+
 .menu li:hover {
-	padding-right: 6px;
 	color: red;
+}
+
+
+
+
+
+.confirmation-dialogue {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+	padding: 20px;
+	width: 500px;
+	text-align: center;
+	/* height: 200px; */
+}
+
+.confirmation-dialogue p {
+	margin: 0 0 40px 0;
+	font-size: 26px;
+}
+
+.dialogue-btn {
+	border: none;
+	background-color: #0077cc;
+	color: #fff;
+	padding: 10px 20px;
+	border-radius: 5px;
+	cursor: pointer;
+	margin-right: 20px;
+
+	font-size: 26px;
+	transition: background-color 0.2s ease-in-out;
+}
+
+.dialogue-btn:last-child {
+	margin-right: 0;
+}
+
+.dialogue-btn:hover {
+	background-color: #005ea8;
+}
+
+.dialogue-btn:active {
+	background-color: #004a90;
 }

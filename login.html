@@ -172,7 +172,7 @@
 				let userName = document.getElementById("username").value;
 				let pass = document.getElementById("password").value;
 
-				if (!Students[userName] || Students[userName]["Pass"] != pass) {
+				if (!Students[userName] || Students[userName]["Pass"] != pass || Students[userName]["stat"] == '0') {
 					prompt();
 					return;
 				}
