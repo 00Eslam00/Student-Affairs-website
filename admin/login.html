@@ -2,13 +2,19 @@
 <html>
 
 <head>
+	<script>
+		if (localStorage.getItem("Admin-login") != '') {
+			window.location.href = "index.html";
+		}
+	</script>
+
+	<title>Login</title>
+	<meta name="description" content="Login to your account">
+	<link rel="stylesheet" href="../css/login.css">
 
 </head>
 
 
-<title>Login</title>
-<meta name="description" content="Login to your account">
-<link rel="stylesheet" href="../css/login.css">
 
 <body>
 	<header>
