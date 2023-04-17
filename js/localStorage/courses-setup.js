@@ -304,22 +304,22 @@ if (viewTable) {
 		let row = document.createElement("tr");
 
 		let crsCode = document.createElement("td");
-		crsCode.setAttribute("vlaue", "crsCode");
+		crsCode.setAttribute("value", "crsCode");
 
 		let crsName = document.createElement("td");
-		crsName.setAttribute("vlaue", "crsName");
+		crsName.setAttribute("value", "crsName");
 
 		let crsCredit = document.createElement("td");
-		crsCredit.setAttribute("vlaue", "crsCredit");
+		crsCredit.setAttribute("value", "crsCredit");
 
 		let crsLevel = document.createElement("td");
-		crsLevel.setAttribute("vlaue", "crsLevel");
+		crsLevel.setAttribute("value", "crsLevel");
 
 		let crsDept = document.createElement("td");
-		crsDept.setAttribute("vlaue", "crsDept");
+		crsDept.setAttribute("value", "crsDept");
 
 		let crsPre = document.createElement("td");
-		crsPre.setAttribute("vlaue", "crsPre");
+		crsPre.setAttribute("value", "crsPre");
 
 
 		crsCode.appendChild(document.createTextNode(`${key}`));

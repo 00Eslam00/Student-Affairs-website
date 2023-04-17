@@ -140,23 +140,58 @@ function applyFilter() {
 	const table = document.getElementsByTagName("table")[0];
 
 	const filters = document.querySelectorAll('.filter-values div');
-
+	let tableRows = document.querySelectorAll("tbody tr");
 	console.log(filters.length);
-	for (let i = 0; i < filters.length; i++) {
-		let filterName = filters[i].getAttribute("filter-name");
-		let filterValue = filters[i].getAttribute("filter-value");
+	// for (let i = 0; i < filters.length; i++) {
+	// 	let filterName = filters[i].getAttribute("filter-name");
+	// 	let filterValue = filters[i].getAttribute("filter-value");
+	// 	console.log(filterName, filterValue);
+	// 	let tdEles = document.querySelectorAll(`tbody td[value="${filterName}"]`);
+	// 	console.log(tdEles);
+	// 	for (let j = 0; j < tdEles.length; j++) {
+	// 		// console.log(tdEles[j]);
+	// 		if (tdEles[j].textContent.includes(filterValue)) {
+	// 			tdEles[j].parentElement.classList.remove("hide-filter");
+	// 		} else {
 
-		let tdEles = document.querySelectorAll(`tbody td[value="${filterName}"]`);
-		// console.log(tdEles);
-		for (let i = 0; i < tdEles.length; i++) {
-			// console.log(tdEles[i]);
-			if (tdEles[i].textContent.includes(filterValue)) {
-				tdEles[i].parentElement.classList.remove("hide-filter");
-			} else {
+	// 			tdEles[j].parentElement.classList.add("hide-filter");
+	// 		}
+	// 	}
+	// }
 
-				tdEles[i].parentElement.classList.add("hide-filter");
+	for (let i = 0; i < tableRows.length; i++) {
+
+		let tds = tableRows[i].childNodes;
+		let flag = true;
+
+		for (let j = 0; j < tds.length; j++) {
+
+			for (let k = 0; k < filters.length; k++) {
+				console.log(tds[j], filters[k]);
+				// console.log(filters[k].getAttribute("filter-name") == tds[j].getAttribute("value"),
+				// filters[k].getAttribute("filter-name"), tds[j].getAttribute("value"));
+				if (filters[k].getAttribute("filter-name") == tds[j].getAttribute("value")) {
+					if (filters[k].getAttribute("filter-value") != tds[j].textContent) {
+						// console.log(filters[k].getAttribute("filter-value") != tds[j].textContent,
+						// filters[k].getAttribute("filter-value"), tds[j].textContent)
+						flag = false;
+						break;
+					}
+				}
+
 			}
+
+			if (!flag)
+				break;
+
 		}
+
+		if (flag == false)
+			tableRows[i].classList.add("hide-filter");
+		else
+			tableRows[i].classList.remove("hide-filter");
+
+
 	}
 
 	if (filters.length == 0) {
@@ -264,22 +299,25 @@ document.addEventListener("click", (ele) => {
 document.addEventListener("change", (ele) => {
 	ele = ele.target;
 	let selectStat = document.querySelector('.select-stat');
-	if (selectStat.value != 2 && selectStat.value != ele.value) {
+	if (selectStat && selectStat.value != 2 && selectStat.value != ele.value) {
 		ele.parentElement.parentElement.classList.add("hide-stat");
 	}
 
-	let stdId = ele.parentElement.parentElement.childNodes[0].textContent;
-	// console.log(stdId);
-	let Students = JSON.parse(localStorage.getItem("Students"));
-	Students[stdId]["stat"] = ele.value;
-	// console.log(Students[stdId]["stat"]);
+	if (ele.classList.contains("std-stat")) {
+		let stdId = ele.parentElement.parentElement.childNodes[0].textContent;
+		// console.log(stdId);
+		let Students = JSON.parse(localStorage.getItem("Students"));
+		Students[stdId]["stat"] = ele.value;
+		// console.log(Students[stdId]["stat"]);
 
-	if (ele.value == 0 && localStorage.getItem("Student-login")) {
-		localStorage.setItem("Student-login", '');
+		if (ele.value == 0 && localStorage.getItem("Student-login")) {
+			localStorage.setItem("Student-login", '');
+		}
+
+
+		localStorage.setItem("Students", JSON.stringify(Students));
 	}
 
-
-	localStorage.setItem("Students", JSON.stringify(Students));
 
 });
 
