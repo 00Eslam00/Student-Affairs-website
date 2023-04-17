@@ -345,12 +345,16 @@ if (viewTable) {
 
 
 		stdID.appendChild(document.createTextNode(`${key}`));
+		stdID.title = key;
 
 		stdName.appendChild(document.createTextNode(`${Students[key]["Name"]}`));
+		stdName.title = Students[key]["Name"];
 
 		stdPass.appendChild(document.createTextNode(`${Students[key]["Pass"]}`));
+		stdPass.title = Students[key]["Pass"];
 
 		stdBD.appendChild(document.createTextNode(`${Students[key]["Birth-date"]}`));
+		stdBD.title = Students[key]["Birth-date"];
 
 		const stdCoures = Students[key]["Courses"];
 		let gpaSum = 0;
@@ -368,6 +372,7 @@ if (viewTable) {
 		else
 			gpaSum = gpaSum / totalHours;
 		stdGPA.appendChild(document.createTextNode(`${gpaSum}`));
+		stdGPA.title = gpaSum;
 
 		let gender;
 		if (Students[key]["Gender"] == 1)
@@ -375,17 +380,22 @@ if (viewTable) {
 		else
 			gender = "Female"
 		stdGender.appendChild(document.createTextNode(`${gender}`));
+		stdGender.title = gender;
 
 		stdLevel.appendChild(document.createTextNode(`${Students[key]["Level"]}`));
+		stdLevel.title = Students[key]["Level"];
 
 
 		let dept = JSON.parse(localStorage.getItem("Departments"))[`${Students[key]["Dept"]}`]["Name"];
 		// console.log(dept)
 		stdDept.appendChild(document.createTextNode(`${dept}`));
+		stdDept.title = dept;
 
 		stdEmail.appendChild(document.createTextNode(`${Students[key]["Email"]}`));
+		stdEmail.title = Students[key]["Email"];
 
 		stdMobile.appendChild(document.createTextNode(`${Students[key]["Mobile"]}`));
+		stdMobile.title = Students[key]["Mobile"];
 
 		row.appendChild(stdID);
 		row.appendChild(stdName);

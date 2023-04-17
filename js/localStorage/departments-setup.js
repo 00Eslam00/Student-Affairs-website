@@ -213,8 +213,15 @@ if (viewTable) {
 		deptCrs.setAttribute("value", "deptCrs");
 
 		deptID.appendChild(document.createTextNode(`${key}`));
+		deptID.title = key;
+
 		deptName.appendChild(document.createTextNode(`${depts[key]['Name']}`));
+		deptName.title = depts[key]['Name'];
+
 		deptCrs.appendChild(document.createTextNode(`${depts[key]['courses'].join(", ")}`));
+		deptCrs.title = depts[key]['courses'].join(", ");
+
+
 		row.appendChild(deptID);
 		row.appendChild(deptName);
 		row.appendChild(deptCrs);

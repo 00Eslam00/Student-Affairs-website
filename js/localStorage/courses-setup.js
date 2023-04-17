@@ -323,11 +323,23 @@ if (viewTable) {
 
 
 		crsCode.appendChild(document.createTextNode(`${key}`));
+		crsCode.title = key;
+
 		crsName.appendChild(document.createTextNode(`${courses[key]['Name']}`));
+		crsName.title = courses[key]['Name'];
+
 		crsCredit.appendChild(document.createTextNode(`${courses[key]['Credit']}`));
+		crsCredit.title = courses[key]['Credit'];
+
 		crsLevel.appendChild(document.createTextNode(`${courses[key]['Level']}`));
+		crsLevel.title = courses[key]['Level'];
+
 		crsDept.appendChild(document.createTextNode(`${courses[key]['Dept']}`));
+		crsDept.title = courses[key]['Dept'];
+
 		crsPre.appendChild(document.createTextNode(`${courses[key]['Pre-courses'].join(", ")}`));
+		crsPre.title = courses[key]['Pre-courses'].join(", ");
+
 
 		// console.log(crsCode, crsName, crsCredit, crsLevel, crsDept)
 		row.appendChild(crsCode);
